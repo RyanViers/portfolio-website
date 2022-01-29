@@ -1,0 +1,372 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 2 version
+*/
+
+
+/*
+Colors Used
+
+Text Color (Dark Grey): #2b2b2b;
+Internal Links (Dark Green): #05676e
+External Links (Light Green): #357b70;
+Selected Links (Green): #489c79
+Secondary Color (Orange): #e0b354;
+*/
+
+/*Basic Stylings for Body*/
+
+body{
+  margin: auto;
+  min-height: 400px;
+  margin-bottom: 100px;
+  background-color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+*{
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;/*Adds padding and border to 100% of width*/
+}
+
+h1{
+  font-size: 30px;
+  font-weight: 700;
+  font-variant: small-caps;
+}
+
+span{
+  background-color: #add8e6;
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+ /*Styling for Anchor Elements*/
+
+ a {
+   color: #357b70;/*external link color*/
+ }
+
+ a:visited {
+   color: #05676e;/*visited link, internal links, static color*/
+ }
+
+ a:hover, a:focus {
+   text-decoration: none;  /*No underlining when hovering over a link*/
+ }
+
+ a:active {
+   color: #489c79;/*selected link, color when pressed*/
+ }
+
+/*Styling for Buttons*/
+
+ button {
+   border: none;/*overwrites browser defaults and resets the border*/
+   display: inline-block;
+   font-family: inherit;/*takes the font from the outer container*/
+   background-color: #357b70;/* styles the background color, font color, and text decoration (underline, etc.) of the button */
+   color: #ffffff;
+   text-decoration: none;
+   padding: 10px;/*adds spacing to the button*/
+   border-radius: 3px;
+   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+   -webkit-transition: 0.2s opacity;
+   transition: 0.2s opacity;/*sets length of transition animation, sets the kind of transition animation*/
+ }
+
+ .button {
+   border: none;/*overwrites browser defaults and resets the border*/
+   display: inline-block;
+   font-family: inherit;/*takes the font from the outer container*/
+   background-color: #357b70;/* styles the background color, font color, and text decoration (underline, etc.) of the button */
+   color: #ffffff;
+   text-decoration: none;
+   padding: 10px;/*adds spacing to the button*/
+   border-radius: 3px;
+   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+   -webkit-transition: 0.2s opacity;
+   transition: 0.2s opacity;/*sets length of transition animation, sets the kind of transition animation*/
+ }
+
+ button:hover, button:focus, .button:hover, .button:focus {
+   cursor: pointer;/* lets the mouse appear as a hand when hovering over the button */
+   opacity: 0.8;/* reduces the opacity of the button to 80% */
+ }
+
+/*Secondary-Button Styling*/
+
+ .button__secondary {
+   background-color: #e0b354;
+   color: #2b2b2b;
+ }
+
+/*Header*/
+
+.page-header{/*Basic Stylings for Header*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  font-weight: 700;
+  background-color: #d3d3d3;
+  font-variant: small-caps;
+  border-bottom: 1px solid black;
+}
+
+.page-header__item{
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 200px;
+          flex: 0 1 200px;/*flex-grow, flex-shrink, flex-basis, can grow and shrink if values are positive, cant if value is 0*/
+}
+
+.page-header__item:last-child{
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: right;
+  padding-top: 30px;
+}
+
+.logo{/*Need new logo for it to work*/
+  min-height: 10px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  min-width: 36px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.logo:hover{
+  opacity: .5;
+}
+
+/*Navigation List*/
+
+.navigation-list{/*removes bullet points*/
+  list-style-type: none;
+}
+
+.navigation-list li{/*lays navigation list horizontally*/
+  display: inline-block;/*turns each list item into inline-block element*/
+  margin-left: 15px;
+}
+
+.navigation-list_item--active{
+  text-decoration: none;/*Removes underline from current page*/
+}
+
+/*Index*/
+
+.profile{
+  display: center;
+  max-width: 700px;/*keeps container from exceeding 700px*/
+  margin: 0 auto;/*0 for full margin top to bottom, auto splits evenly right and left margin*/
+  padding-top: 10px;/*Add padding to top of container*/
+}
+
+.profile__portrait{
+  float: left;
+  width: 250px;
+  height: auto;
+  margin-right: 1px;/*Margin between image and text*/
+  border-radius: 50%;/*adds rounded border to image*/
+}
+
+/*About*/
+
+.nobull{
+  list-style-type: none;/*Removes bullets from About.html list*/
+}
+
+@-webkit-keyframes color-change{
+  0%{
+    fill: #edc655;
+  }
+  50%{
+    fill: #fcffad;
+  }
+  100%{
+    fill: #f76414;
+  }
+}
+
+@keyframes color-change{
+  0%{
+    fill: #edc655;
+  }
+  50%{
+    fill: #fcffad;
+  }
+  100%{
+    fill: #f76414;
+  }
+}
+
+.sun{
+  -webkit-animation: 4s color-change infinite alternate linear;
+          animation: 4s color-change infinite alternate linear;
+}
+
+@-webkit-keyframes cloud-move {
+  from{
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to{
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+
+@keyframes cloud-move {
+  from{
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to{
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front{
+  -webkit-animation: 30s cloud-move infinite alternate linear;
+          animation: 30s cloud-move infinite alternate linear;
+}
+
+@-webkit-keyframes cloud-move-reverse {
+  from{
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px)
+  }
+  to{
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
+  }
+}
+
+@keyframes cloud-move-reverse {
+  from{
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px)
+  }
+  to{
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back{
+  -webkit-animation: 34s cloud-move-reverse infinite alternate linear;
+          animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+/*Contact*/
+
+/*Work*/
+
+.grid__item{/*Fallback layout for older browsers that dont recognize new grid layouts*/
+  display: inline-block;
+  width: 33%;
+}
+
+.grid{
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;/*allocates even space to each grid item*/
+  grid-gap: 20px;/*creates gap between each grid item*/
+  margin: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.grid__item{
+  background-color: lightgray;
+  width: auto;/*Make sure new layout grid used by modern browsers*/
+  min-height: auto;
+  margin: 0;
+}
+
+.grid__item:last-child{/*Tells last child which column and row to start and stop*/
+  -ms-grid-column: 3;
+  grid-column: 3/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+}
+
+@media all and (max-width: 500px) {/*all specifies which media, max-width defines up to what screen size*/
+  .grid{
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;/*changes 3-column grid to a 1 column grid*/
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){/*screen sizes between 500px to 750px*/
+  .grid{
+    -ms-grid-columns: 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr;/*changes 3-column grid to a 2 column grid*/
+  }
+}
+
+@media all and (max-width: 750px) {/*targets both screen ranges*/
+  .grid{
+    grid-gap: 10px /*gap between grid item when screen is small*/
+  }
+  .grid__item:last-child{/*tells grid item to split margin space evenly*/
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1{
+    font-size: 22px;/*shrinks word "Work" in small screen*/
+  }
+}
+
+/*Footer*/
+
+.page-footer{
+  clear: both;/*Removes both right and left float properties*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;/*keeps footer in place even when scrolling*/
+  bottom: 0;/*puts footer on bottom of browser page*/
+  text-align: center;
+  width: 100%;/*centers footer*/
+  background-color: #d3d3d3;
+  border-top: 1px solid black;
+  line-height: 0.1;/*brings text and icons closer*/
+  padding-bottom: 15px;/*Adds space under icons*/
+}
+
+.footer-img{
+  width: 30px;
+  height: 30px;
+  -webkit-transition: width-height;
+  transition: width-height;
+}
+
+.footer-img:hover{
+  width: 40px;
+  height: 40px;
+  opacity: .5;
+}
