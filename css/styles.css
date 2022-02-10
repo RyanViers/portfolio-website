@@ -8,7 +8,7 @@ Selected Links (Green): #489c79
 Secondary Color (Orange): #e0b354;
 */
 
-/* Basic Stylings for Body */
+/* Basic Stylings for Body - START */
 
 :root {
   --primary-color: #357b70;
@@ -19,6 +19,7 @@ Secondary Color (Orange): #e0b354;
   --white: #fff;
   --light-blue: #add8e6;
   --yellow: #e0b354;
+  --black: #000;
   --font-weight-bold: 700;
   --font-weight-body: 400;
 }
@@ -51,7 +52,9 @@ span {
   text-decoration: underline;
 }
 
-/* Styling for Anchor Elements */
+/* Basic Stylings for Body - END */
+
+/* Styling for Anchor Elements - START */
 
 a {
   color: var(--primary-color);/* external link color */
@@ -70,7 +73,9 @@ a:active {
   color: var(--tertiary-color);/* selected link, color when pressed */
 }
 
-/* Styling for Buttons */
+/* Styling for Anchor Elements - END */
+
+/* Styling for Buttons - START */
 
 button,
 .button {
@@ -101,7 +106,9 @@ button:focus,
   color: var(--dark-grey);
 }
 
-/* Header */
+/* Styling for Buttons - END */
+
+/* Header - START */
 
 .page-header {/* Basic Stylings for Header */
   display: flex;
@@ -110,7 +117,7 @@ button:focus,
   font-weight: var(--font-weight-bold);
   background-color: var(--light-grey);
   font-variant: small-caps;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--black);
 }
 
 .page-header__item {
@@ -135,7 +142,9 @@ button:focus,
   opacity: 0.5;
 }
 
-/* Navigation List */
+/* Header - END */
+
+/* Navigation List - START */
 
 .navigation-list {/* removes bullet points */
   list-style-type: none;
@@ -150,7 +159,9 @@ button:focus,
   text-decoration: none;/* Removes underline from current page */
 }
 
-/* Index */
+/* Navigation List - END */
+
+/* Index - START */
 
 .profile {
   max-width: 700px;/* keeps container from exceeding 700px */
@@ -166,7 +177,9 @@ button:focus,
   border-radius: 50%;/* adds rounded border to image */
 }
 
-/* About */
+/* Index - END */
+
+/* About - START */
 
 .nobull {
   list-style-type: none;/* Removes bullets from About.html list */
@@ -218,9 +231,13 @@ button:focus,
   animation: 34s cloud-move-reverse infinite alternate linear;
 }
 
-/* Contact */
+/* About - END */
 
-/* Work */
+/* Contact - START */
+
+/* Contact - END */
+
+/* Work - START */
 
 .grid__item {/* Fallback layout for older browsers that dont recognize new grid layouts */
   display: inline-block;
@@ -275,7 +292,9 @@ button:focus,
   }
 }
 
-/* Footer */
+/* Work - END */
+
+/* Footer - START */
 
 .page-footer {
   clear: both;/* Removes both right and left float properties */
@@ -302,3 +321,5 @@ button:focus,
   height: 40px;
   opacity: 0.5;
 }
+
+/* Footer - END */
