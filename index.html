@@ -23,34 +23,48 @@
   </head>
 
   <body>
-    <header class="page-header">
-      <a href="index.html"
-        ><img src="./img/name.png" alt="Text that says Ryan Viers" class="logo"
-      /></a>
+    <header class="page-header fade-in">
+      <button class="button" onclick="window.location.href='index.html';">
+        Ryan Viers
+      </button>
+
       <nav class="main-navigation page-header__item">
         <ul role="menubar" class="navigation-list">
           <li role="presentation">
-            <a
-              href="index.html"
+            <button
+              onclick="window.location.href='index.html';"
               role="menuitem"
-              class="navigation-list_item navigation-list_item--active"
-              >Home</a
+              class="navigation-list_item navigation-list_item--active button"
             >
+              Home
+            </button>
           </li>
           <li role="presentation">
-            <a href="#about" role="menuitem" class="navigation-list_item"
-              >About</a
+            <button
+              onclick="window.location.href='#about';"
+              role="menuitem"
+              class="navigation-list_item button"
             >
+              About
+            </button>
           </li>
           <li role="presentation">
-            <a href="contact.html" role="menuitem" class="navigation-list_item"
-              >Contact</a
+            <button
+              onclick="window.location.href='#projects';"
+              role="menuitem"
+              class="navigation-list_item button"
             >
+              Projects
+            </button>
           </li>
           <li role="presentation">
-            <a href="#projects" role="menuitem" class="navigation-list_item"
-              >Projects</a
+            <button
+              onclick="window.location.href='#contact';"
+              role="menuitem"
+              class="navigation-list_item button"
             >
+              Contact
+            </button>
           </li>
         </ul>
       </nav>
@@ -86,12 +100,21 @@
           href="https://github.com/RyanViers"
           class="button fade-in"
           style="animation-delay: 800ms"
-          ><span class="button-text"> CHECK OUT MY CODE </span></a
+          ><span class="button-text"> GitHub </span></a
         >
+        <a
+          href="files/cv.pdf"
+          target="_blank"
+          class="button fade-in"
+          style="animation-delay: 1000ms"
+          download
+        >
+          CV
+        </a>
       </section>
 
       <!-- About me -->
-      <section id="about">
+      <section id="about" class="fade-in">
         <div class="home-text-container">
           <div class="about-heading-container">
             <h1 class="about-heading fade-in" style="animation-delay: 500ms">
@@ -128,6 +151,8 @@
                 height="auto"
                 viewBox="0 0 700 505"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                style="background-color: white"
+                ;
               >
                 <defs>
                   <polygon
@@ -2487,7 +2512,9 @@
         </div>
         <div class="grid">
           <div class="grid__item">
-            <h1>myFlix Angular App</h1>
+            <div class="grid-item-title">
+              <h1>myFlix Angular</h1>
+            </div>
             <img
               class="screenshot"
               width="100%"
@@ -2501,6 +2528,14 @@
               about registered users and movies. It uses a RESTful API to
               communicate with the the database and the client.
             </p>
+            <br />
+            <div class="language-list-container">
+              <h1 class="language-title">Built With:</h1>
+              <ul class="language-list">
+                <li role="listitem">Angular</li>
+                <li role="listitem">Angular Material</li>
+              </ul>
+            </div>
             <br />
             <div class="project-links-container">
               <a
@@ -2527,7 +2562,9 @@
           </div>
 
           <div class="grid__item">
-            <h1>myFlix React App</h1>
+            <div class="grid-item-title">
+              <h1>myFlix React</h1>
+            </div>
             <img
               class="screenshot"
               width="100%"
@@ -2542,6 +2579,16 @@
               with the the database and the client.
             </p>
             <br />
+            <div class="language-list-container">
+              <h1 class="language-title">Built With:</h1>
+              <ul class="language-list">
+                <li role="listitem">React</li>
+                <li role="listitem">React Redux</li>
+                <li role="listitem">React Bootstrap</li>
+                <li role="listitem">Axios</li>
+                <li role="listitem">Parcel</li>
+              </ul>
+            </div>
             <div class="project-links-container">
               <a
                 href="https://github.com/RyanViers/myFlix-client"
@@ -2564,7 +2611,9 @@
           </div>
 
           <div class="grid__item">
-            <h1>Pokedex-App</h1>
+            <div class="grid-item-title">
+              <h1>Pokedex-App</h1>
+            </div>
             <img
               class="screenshot"
               width="100%"
@@ -2578,6 +2627,14 @@
               search for a Pokémon by name and see its details.
             </p>
             <br />
+            <div class="language-list-container">
+              <h1 class="language-title">Built With:</h1>
+              <ul class="language-list">
+                <li role="listitem">JavaScript</li>
+                <li role="listitem">JQuery</li>
+                <li role="listitem">Bootstrap</li>
+              </ul>
+            </div>
             <div class="project-links-container">
               <a
                 href="https://github.com/RyanViers/pokedex-app"
@@ -2603,28 +2660,116 @@
           </div>
 
           <div class="grid__item">
-            <h2>Node.js pdf generation</h2>
+            <div class="grid-item-title">
+              <h1>myFlix API</h1>
+            </div>
+            <img
+              class="screenshot"
+              width="100%"
+              height="auto"
+              src="./img/api-pic.PNG"
+              alt="Screenshot of the Pokedex homepage"
+            />
             <p>
-              Within this project I created a service that generates pdf out of
-              webpages with the help of a node.js server.
+              This API is the server-side code for the Angular and React myFlix
+              apps. This API allows users to create an account, see information
+              about movies, directors and genres, add and remove movies to their
+              favorites, edit their personal info and more. This is an RESTful
+              API and includes HTTP authentication with JWT passport
+              authentication, bcrypt password hashing, express-validator for
+              server-side input validation and CORS data security.
             </p>
-            <a href="#">See Project on Github</a>
+            <br />
+            <div class="language-list-container">
+              <h1 class="language-title">Built With:</h1>
+              <ul class="language-list">
+                <li role="listitem">MongoDB</li>
+                <li role="listitem">Express</li>
+                <li role="listitem">Mongoose</li>
+                <li role="listitem">Morgan</li>
+                <li role="listitem">Node.js</li>
+              </ul>
+            </div>
+            <div class="project-links-container">
+              <a href="https://github.com/RyanViers/movie-api" target="_blank">
+                <img
+                  src="img/github_icon.svg"
+                  alt="Github logo"
+                  class="project-links_img"
+                />
+              </a>
+              <a
+                href="https://ryan-viers-movie-app.herokuapp.com/"
+                target="_blank"
+              >
+                <img
+                  src="img/external-link.svg"
+                  alt="Github logo"
+                  class="project-links_img"
+                />
+              </a>
+            </div>
           </div>
 
           <div class="grid__item">
-            <h2>Medium Blog</h2>
-            <p>I am writing on medium.com about React.js.</p>
-            <a href="#">Read my latest blogpost</a>
+            <div class="grid-item-title">
+              <h1>CHAT App</h1>
+            </div>
+            <img
+              class="screenshot"
+              width="100%"
+              height="400"
+              src="./img/chat-pic.PNG"
+              alt="Screenshot of the Chat homepage"
+            />
+            <p>
+              This API is the server-side code for the Angular and React myFlix
+              apps. This API allows users to create an account, see information
+              about movies, directors and genres, add and remove movies to their
+              favorites, edit their personal info and more. This is an RESTful
+              API and includes HTTP authentication with JWT passport
+              authentication, bcrypt password hashing, express-validator for
+              server-side input validation and CORS data security.
+            </p>
+            <br />
+            <div class="language-list-container">
+              <h1 class="language-title">Built With:</h1>
+              <ul class="language-list">
+                <li role="listitem">MongoDB</li>
+                <li role="listitem">Express</li>
+                <li role="listitem">Mongoose</li>
+                <li role="listitem">Morgan</li>
+                <li role="listitem">Node.js</li>
+              </ul>
+            </div>
+            <div class="project-links-container">
+              <a href="https://github.com/RyanViers/chat" target="_blank">
+                <img
+                  src="img/github_icon.svg"
+                  alt="Github logo"
+                  class="project-links_img"
+                />
+              </a>
+              <a href="https://github.com/RyanViers/chat/" target="_blank">
+                <img
+                  src="img/external-link.svg"
+                  alt="external-link"
+                  class="project-links_img"
+                />
+              </a>
+            </div>
           </div>
 
           <div class="grid__item">
-            <h2>Meet App</h2>
+            <div class="grid-item-title">
+              <h1>Meet App</h1>
+            </div>
             <img
               class="screenshot"
               width="100%"
               height="auto"
               src="./img/meet_screenshot.png"
-              alt="Screenshot of the work page"
+              alt="Screenshot of the Meet homepage"
             />
             <p>
               This application was built with React.js using a test-driven
@@ -2635,14 +2780,20 @@
               uses a pie chart and a scatter chart to display number of events
               per city and the code language for the events.
             </p>
-            <div>
-              <a href="https://ryanviers.github.io/meet/" target="_blank">
-                <img
-                  src="img/external-link.svg"
-                  alt="Github logo"
-                  class="project-links_img"
-                />
-              </a>
+            <br />
+            <div class="language-list-container">
+              <h1 class="language-title">Built With:</h1>
+              <ul class="language-list">
+                <li role="listitem">React</li>
+                <li role="listitem">Jest</li>
+                <li role="listitem">Cucumber</li>
+                <li role="listitem">Puppeteer</li>
+                <li role="listitem">Enzyme</li>
+                <li role="listitem">Google Calander API</li>
+                <li role="listitem">AWS</li>
+              </ul>
+            </div>
+            <div class="project-links-container">
               <a href="https://github.com/RyanViers/meet" target="_blank">
                 <img
                   src="img/github_icon.svg"
@@ -2650,28 +2801,84 @@
                   class="project-links_img"
                 />
               </a>
+              <a href="https://ryanviers.github.io/meet/" target="_blank">
+                <img
+                  src="img/external-link.svg"
+                  alt="external-link"
+                  class="project-links_img"
+                />
+              </a>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="about-heading-container">
+          <h1 class="about-heading fade-in" style="animation-delay: 500ms">
+            CONTACT INFORMATION
+          </h1>
+        </div>
+        <h1 class="contact-title">Get in touch!</h1>
+        <p class="contact-text">
+          Looking for remote work or work in the Johnson City, TN area? I'm
+          currently available for full-time or part-time positions. If you're
+          interested, please send me an email by clicking the Contact Me button
+          below.
+        </p>
+        <a href="mailto:ryanviersiv@hotmail.com" class="button" target="_blank"
+          ><span class="button-text">Contact Me!</span></a
+        >
+        <div class="social-media">
+          <!-- GitHub -->
+          <a href="https://github.com/RyanViers" target="_blank">
+            <img
+              src="img/github-again.svg"
+              alt="Github logo"
+              class="contact-img"
+            />
+          </a>
+
+          <!-- Twitter -->
+          <a href="#" target="_blank">
+            <img
+              src="img/twitter-gradient.svg"
+              alt="twitter logo"
+              class="contact-img"
+            />
+          </a>
+
+          <!-- Linkedin -->
+          <a href="#" target="_blank">
+            <img
+              src="img/linkedin-gradient.svg"
+              alt="LinkedIn logo"
+              class="contact-img"
+            />
+          </a>
+        </div>
+      </section>
     </main>
 
-    <footer class="page-footer">
-      <div class="social-media">
+    <footer class="page-footer fade-in">
+      <div>
         <p>Find Me On</p>
         <br />
         <a href="https://github.com/" target="_blank"
-          ><img class="footer-img" src="img/github_icon.svg" alt="Github"
+          ><img class="footer-img" src="img/github-gradient.svg" alt="Github"
         /></a>
         <a href="https://twitter.com/" target="_blank"
-          ><img class="footer-img" src="img/twitter_icon.svg" alt="Twitter"
+          ><img class="footer-img" src="img/twitter-gradient.svg" alt="Twitter"
         /></a>
         <a href="https://www.linkedin.com/" target="_blank"
-          ><img class="footer-img" src="img/linkedin_icon.svg" alt="LinkedIn"
+          ><img
+            class="footer-img"
+            src="img/linkedin-gradient.svg"
+            alt="LinkedIn"
         /></a>
       </div>
     </footer>
-
     <script src="js/tota11y.min.js"></script>
   </body>
 </html>

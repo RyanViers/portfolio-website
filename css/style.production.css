@@ -35,16 +35,22 @@ a {
   text-align: center;
   min-width: 100px;
   padding: 0.75rem 1rem;
-  border: 1px solid #38ee65;
+  border: 1px solid purple;
   border-radius: 3px;
   background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    rgba(143, 64, 248, 0.5),
+    rgba(39, 200, 255, 0.5)
+  );
   line-height: 1;
   cursor: pointer;
   font-size: 30px;
   font-family: 'Roboto Mono', monospace;
-  color: purple;
+  color: #38ee65;
   font-weight: 300;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .button:hover,
@@ -58,7 +64,9 @@ a {
   line-height: normal;
 }
 
-/* Header */
+/* **************************** */
+/* ********** Header ********** */
+/* **************************** */
 
 .page-header {
   position: sticky;
@@ -71,19 +79,14 @@ a {
   width: 100%;
   font-weight: 700;
   background-color: black;
-  background-image: linear-gradient(
-    to right,
-    rgba(143, 64, 248, 0.5),
-    rgba(39, 200, 255, 0.5)
-  );
   font-variant: small-caps;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid purple;
 }
 
 .page-header__item {
   -webkit-box-flex: 0;
   -ms-flex: 0 1 200px;
-  flex: 0 1 200px; /* flex-grow, flex-shrink, flex-basis, can grow and shrink if values are positive, cant if value is 0 */
+  flex: 0 1 200px;
 }
 
 .page-header__item:last-child {
@@ -112,7 +115,9 @@ a {
   opacity: 0.5;
 }
 
-/* Navigation List */
+/* **************************** */
+/* ******** Navigation ******** */
+/* **************************** */
 
 .navigation-list {
   /* removes bullet points */
@@ -144,7 +149,9 @@ section {
   max-width: 1000px;
 }
 
-/* Index */
+/* **************************** */
+/* ********** Index *********** */
+/* **************************** */
 
 #home {
   display: flex;
@@ -186,7 +193,7 @@ section {
   font-weight: 700;
   font-variant: small-caps;
   font-family: 'Roboto Mono', monospace;
-  color: purple;
+  color: #38ee65;
 }
 
 .profile-text {
@@ -282,7 +289,9 @@ section {
   }
 }
 
-/* About */
+/* **************************** */
+/* ********* About Me ********* */
+/* **************************** */
 
 #about {
   display: flex;
@@ -323,8 +332,12 @@ section {
   align-items: left;
   max-width: 540px;
   margin-bottom: 25px;
-
   border: 2px solid purple;
+  background-image: linear-gradient(
+    to right,
+    rgba(143, 64, 248, 0.5),
+    rgba(39, 200, 255, 0.5)
+  );
 }
 
 .skills-list {
@@ -340,14 +353,68 @@ section {
   display: flex;
   justify-content: center;
   font-family: 'Roboto Mono', monospace;
-  color: purple;
+  color: #38ee65;
   line-height: 1.6;
   font-size: 30px;
 }
 
-/* Contact */
+/* **************************** */
+/* ********* Contact ********** */
+/* **************************** */
 
-/* Projects */
+#contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0px;
+  padding-top: 130px;
+}
+
+.contact-title {
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font-size: 40px;
+  font-weight: 300;
+  font-family: 'Roboto Mono', monospace;
+  color: #38ee65;
+}
+
+.contact-text {
+  display: flex;
+  padding-bottom: 100px;
+  font-size: 25px;
+  font-weight: 300;
+  font-family: 'Roboto Mono', monospace;
+  color: #38ee65;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  max-width: 540px;
+  margin-bottom: 25px;
+}
+
+.contact-img {
+  width: 60px;
+  height: 60px;
+  -webkit-transition: width-height;
+  transition: width-height;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.contact-img:hover {
+  width: 90px;
+  height: 90px;
+  opacity: 0.5;
+}
+/* **************************** */
+/* ********* Projects ********* */
+/* **************************** */
 
 #projects {
   display: flex;
@@ -364,6 +431,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 0%;
+  margin-bottom: 0;
 }
 
 .projects-title {
@@ -373,86 +442,12 @@ section {
   color: purple;
 }
 
-.grid__item {
-  /* Fallback layout for older browsers that dont recognize new grid layouts */
-  display: inline-block;
-  width: 33%;
-}
-
-.grid {
-  display: -ms-grid;
-  display: grid;
-  width: 100%;
-  color: lightgray;
-  font-family: 'Roboto Mono', monospace;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
-  grid-template-columns: 1fr 1fr 1fr; /* allocates even space to each grid item */
-  grid-gap: 20px; /* creates gap between each grid item */
-  margin: 0;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.grid__item {
-  background-color: white;
-  background: linear-gradient(
-    to right,
-    rgba(143, 64, 248, 0.5),
-    rgba(39, 200, 255, 0.5)
-  );
-  width: auto; /* Make sure new layout grid used by modern browsers */
-  min-height: auto;
-  margin: 0;
-  padding: 20px;
-}
-
-.grid__item:last-child {
-  /* Tells last child which column and row to start and stop */
-  -ms-grid-column: 3;
-  grid-column: 3/3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1/3;
-}
-
-@media all and (max-width: 500px) {
-  /* all specifies which media, max-width defines up to what screen size */
-  .grid {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr; /* changes 3-column grid to a 1 column grid */
-  }
-}
-
-@media all and (min-width: 500px) and (max-width: 750px) {
-  /* screen sizes between 500px to 750px */
-  .grid {
-    -ms-grid-columns: 1fr 20px 1fr;
-    grid-template-columns: 1fr 1fr; /* changes 3-column grid to a 2 column grid */
-  }
-}
-
-@media all and (max-width: 750px) {
-  /* targets both screen ranges */
-  .grid {
-    grid-gap: 10px; /* gap between grid item when screen is small */
-  }
-
-  .grid__item:last-child {
-    /* tells grid item to split margin space evenly */
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-
-  h1 {
-    font-size: 22px; /* shrinks word "Work" in small screen */
-  }
-}
-
 .project-links-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
 }
 
 .project-links_img {
@@ -467,7 +462,125 @@ section {
   transform: scale(1.2);
 }
 
-/* Footer */
+.language-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  max-width: 540px;
+  margin: 0;
+  border: 2px solid purple;
+}
+
+.language-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.language-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  font-variant: small-caps;
+  color: black;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.language-list li {
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  color: #38ee65;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  color: lightgray;
+  font-family: 'Roboto Mono', monospace;
+  grid-template-columns: 1fr 1fr 1fr; /* allocates even space to each grid item */
+  grid-gap: 20px; /* creates gap between each grid item */
+  margin: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.grid__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+  background: linear-gradient(
+    to right,
+    rgba(143, 64, 248, 0.5),
+    rgba(39, 200, 255, 0.5)
+  );
+  width: auto; /* Make sure new layout grid used by modern browsers */
+  min-height: auto;
+  margin: 0;
+  padding: 20px;
+}
+
+.grid-item-title {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .grid__item:last-child { */
+/* Tells last child which column and row to start and stop */
+/* -ms-grid-column: 3;
+  grid-column: 3/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+} */
+
+@media all and (max-width: 500px) {
+  /* all specifies which media, max-width defines up to what screen size */
+  .grid {
+    /* -ms-grid-columns: 1fr; */
+    grid-template-columns: 1fr; /* changes 3-column grid to a 1 column grid */
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  /* screen sizes between 500px to 750px */
+  .grid {
+    /* -ms-grid-columns: 1fr 20px 1fr; */
+    grid-template-columns: 1fr 1fr; /* changes 3-column grid to a 2 column grid */
+  }
+}
+
+@media all and (max-width: 750px) {
+  /* targets both screen ranges */
+  .grid {
+    grid-gap: 10px; /* gap between grid item when screen is small */
+  }
+
+  /* tells grid item to split margin space evenly */
+  /* shrinks word "Work" in small screen */
+  /* .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+
+  h1 {
+    font-size: 22px;
+  } */
+}
+
+/* **************************** */
+/* ********** Footer ********** */
+/* **************************** */
 
 .page-footer {
   clear: both; /* Removes both right and left float properties */
@@ -483,28 +596,28 @@ section {
   text-align: center;
   width: 100%; /* centers footer */
   background-color: black;
-  background-image: linear-gradient(
-    to right,
-    rgba(143, 64, 248, 0.5),
-    rgba(39, 200, 255, 0.5)
-  );
-  border-top: 1px solid black;
+  border-top: 1px solid purple;
   line-height: 0.1; /* brings text and icons closer */
+  margin-bottom: 15px;
   padding-bottom: 15px; /* Adds space under icons */
 }
 
 .footer-img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   -webkit-transition: width-height;
   transition: width-height;
 }
 
 .footer-img:hover {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   opacity: 0.5;
 }
+
+/* **************************** */
+/* ****** SVG Animations ****** */
+/* **************************** */
 
 @-webkit-keyframes color-change {
   0% {
