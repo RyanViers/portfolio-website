@@ -1,14 +1,26 @@
+:root {
+  --main-bg-color: #f7ede2;
+  --header-bg-color: #84a59d;
+  --footer-bg-color: #84a59d;
+  --text-color: black;
+  --button-bg-color: #f28482;
+  --projects-bg-color: #f28482;
+}
+
 html {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #000;
-  font-family: 'Inter', sans-serif;
-  color: #d2d0d0;
+  background-color: var(--main-bg-color);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
-*,
+svg {
+  border: 4px solid black;
+}
+
 *:before,
 *:after {
   box-sizing: inherit;
@@ -23,9 +35,12 @@ h3 {
 }
 
 h1 {
-  color: #fff;
+  color: black;
 }
 
+p {
+  color: black;
+}
 a {
   text-decoration: none;
 }
@@ -35,19 +50,16 @@ a {
   text-align: center;
   min-width: 100px;
   padding: 0.75rem 1rem;
-  border: 1px solid purple;
   border-radius: 3px;
-  background-color: transparent;
-  background-image: linear-gradient(
-    to right,
-    rgba(143, 64, 248, 0.5),
-    rgba(39, 200, 255, 0.5)
-  );
+  background-color: var(--button-bg-color);
+  border: 3px solid black;
+  border-radius: 10%;
   line-height: 1;
   cursor: pointer;
   font-size: 30px;
-  font-family: 'Roboto Mono', monospace;
-  color: #38ee65;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  color: black;
   font-weight: 300;
   position: relative;
   margin-bottom: 20px;
@@ -55,7 +67,7 @@ a {
 
 .button:hover,
 .button:focus {
-  background-color: rgba(214, 212, 207, 0.2);
+  background-color: #006d77;
 }
 
 .button-text {
@@ -76,11 +88,11 @@ a {
   display: -ms-flexbox;
   display: flex;
   padding: 20px;
-  width: 100%;
+  width: auto;
   font-weight: 700;
-  background-color: black;
+  background-color: var(--header-bg-color);
   font-variant: small-caps;
-  border-bottom: 1px solid purple;
+  border-bottom: 2px solid black;
 }
 
 .page-header__item {
@@ -95,24 +107,6 @@ a {
   flex-grow: 1;
   text-align: right;
   padding-top: 30px;
-}
-
-.logo {
-  /* Need new logo for it to work */
-  /* min-height: 10px;
-  max-height: -webkit-fit-content;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
-  min-width: 36px;
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-  -webkit-transition-property: opacity;
-  transition-property: opacity; */
-}
-
-.logo:hover {
-  opacity: 0.5;
 }
 
 /* **************************** */
@@ -192,15 +186,17 @@ section {
   font-size: 30px;
   font-weight: 700;
   font-variant: small-caps;
-  font-family: 'Roboto Mono', monospace;
-  color: #38ee65;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  color: black;
 }
 
 .profile-text {
   font-size: 20px;
   font-weight: 300;
-  font-family: 'Roboto Mono', monospace;
-  color: #38ee65;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  color: black;
 }
 
 .fade-in {
@@ -314,8 +310,9 @@ section {
   font-size: 60px;
   font-weight: 700;
   font-variant: small-caps;
-  color: purple;
-  font-family: 'Roboto Mono', monospace;
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 .about-me-details {
@@ -332,12 +329,8 @@ section {
   align-items: left;
   max-width: 540px;
   margin-bottom: 25px;
-  border: 2px solid purple;
-  background-image: linear-gradient(
-    to right,
-    rgba(143, 64, 248, 0.5),
-    rgba(39, 200, 255, 0.5)
-  );
+  border: 5px solid black;
+  background-color: var(--button-bg-color);
 }
 
 .skills-list {
@@ -352,8 +345,9 @@ section {
 .skills-list li {
   display: flex;
   justify-content: center;
-  font-family: 'Roboto Mono', monospace;
-  color: #38ee65;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  color: black;
   line-height: 1.6;
   font-size: 30px;
 }
@@ -377,8 +371,9 @@ section {
   padding-bottom: 100px;
   font-size: 40px;
   font-weight: 300;
-  font-family: 'Roboto Mono', monospace;
-  color: #38ee65;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  color: black;
 }
 
 .contact-text {
@@ -386,8 +381,9 @@ section {
   padding-bottom: 100px;
   font-size: 25px;
   font-weight: 300;
-  font-family: 'Roboto Mono', monospace;
-  color: #38ee65;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  color: black;
 }
 
 .social-media {
@@ -439,7 +435,7 @@ section {
   font-size: 60px;
   font-weight: 700;
   font-variant: small-caps;
-  color: purple;
+  color: black;
 }
 
 .project-links-container {
@@ -468,7 +464,7 @@ section {
   align-items: stretch;
   max-width: 540px;
   margin: 0;
-  border: 2px solid purple;
+  border: 2px solid black;
 }
 
 .language-list {
@@ -487,15 +483,17 @@ section {
   font-weight: 700;
   font-variant: small-caps;
   color: black;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 .language-list li {
   display: flex;
   font-size: 15px;
   justify-content: center;
-  font-family: 'Roboto Mono', monospace;
-  color: #38ee65;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  color: black;
   line-height: 1.6;
 }
 
@@ -503,7 +501,8 @@ section {
   display: grid;
   width: 100%;
   color: lightgray;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
   grid-template-columns: 1fr 1fr 1fr; /* allocates even space to each grid item */
   grid-gap: 20px; /* creates gap between each grid item */
   margin: 0;
@@ -514,16 +513,12 @@ section {
 .grid__item {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: white;
-  background: linear-gradient(
-    to right,
-    rgba(143, 64, 248, 0.5),
-    rgba(39, 200, 255, 0.5)
-  );
+  background-color: var(--button-bg-color);
   width: auto; /* Make sure new layout grid used by modern browsers */
   min-height: auto;
   margin: 0;
   padding: 20px;
+  border: 4px solid black;
 }
 
 .grid-item-title {
@@ -531,18 +526,10 @@ section {
   flex-direction: column;
   padding: 0;
   margin: 0;
+  color: black;
   justify-content: center;
   align-items: center;
 }
-
-/* .grid__item:last-child { */
-/* Tells last child which column and row to start and stop */
-/* -ms-grid-column: 3;
-  grid-column: 3/3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1/3;
-} */
 
 @media all and (max-width: 500px) {
   /* all specifies which media, max-width defines up to what screen size */
@@ -565,17 +552,6 @@ section {
   .grid {
     grid-gap: 10px; /* gap between grid item when screen is small */
   }
-
-  /* tells grid item to split margin space evenly */
-  /* shrinks word "Work" in small screen */
-  /* .grid__item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-
-  h1 {
-    font-size: 22px;
-  } */
 }
 
 /* **************************** */
@@ -595,8 +571,13 @@ section {
   bottom: 0; /* puts footer on bottom of browser page */
   text-align: center;
   width: 100%; /* centers footer */
-  background-color: black;
-  border-top: 1px solid purple;
+  bottom: 0%; /* puts footer on bottom of browser page */
+  background-color: var(--footer-bg-color);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  border-top: 2px solid black;
   line-height: 0.1; /* brings text and icons closer */
   margin-bottom: 15px;
   padding-bottom: 15px; /* Adds space under icons */
