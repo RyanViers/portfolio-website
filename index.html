@@ -23,18 +23,20 @@
   </head>
 
   <body>
-    <header class="page-header fade-in">
-      <button class="button" onclick="window.location.href='index.html';">
-        Ryan Viers
-      </button>
+    <header class="header fade-in">
+      <nav class="navbar">
+        <img
+          src="./img/name.png"
+          class="logo"
+          onclick="window.location.href='index.html';"
+        />
 
-      <nav class="main-navigation page-header__item">
         <ul role="menubar" class="navigation-list">
           <li role="presentation">
             <button
               onclick="window.location.href='index.html';"
               role="menuitem"
-              class="navigation-list_item navigation-list_item--active button"
+              class="navigation-list_item button"
             >
               Home
             </button>
@@ -67,6 +69,11 @@
             </button>
           </li>
         </ul>
+        <div class="stack">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </nav>
     </header>
 
@@ -555,5 +562,6 @@
       </div>
     </footer>
     <script src="js/tota11y.min.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
