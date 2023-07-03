@@ -1,4 +1,4 @@
-import { MobileDropdownComponent } from './components/mobile-dropdown.component';
+import { HeaderComponent } from './../components/header/header.component';
 import { HomeInfoCardsComponent } from './components/home-info-cards.component';
 import { HomeCardsComponent } from './components/home-cards.component';
 import { BackgroundActionComponent } from './components/background-action.component';
@@ -15,17 +15,17 @@ import { BackgroundAction } from './models';
     CommonModule,
     RouterModule,
     HomeHeroComponent,
+    HeaderComponent,
     FooterComponent,
     BackgroundActionComponent,
     HomeCardsComponent,
     HomeInfoCardsComponent,
-    MobileDropdownComponent,
   ],
   standalone: true,
   styles: [``],
   template: `<div class="bg-white">
-    <!-- Mobile Menu Dropdown -->
-    <app-mobile-dropdown></app-mobile-dropdown>
+    <!-- Header -->
+    <app-header></app-header>
 
     <!-- Hero Section -->
     <app-home-hero></app-home-hero>
@@ -42,6 +42,7 @@ import { BackgroundAction } from './models';
       <!-- Collection section -->
       <app-home-info-cards></app-home-info-cards>
 
+      <!-- Featured section -->
       <app-background-action
         [options]="backgroundActionOptions2"
       ></app-background-action>

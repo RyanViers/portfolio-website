@@ -4,3 +4,8 @@ export interface BackgroundAction {
   image: string;
   action: () => void;
 }
+
+export interface Projects {
+  image: string;
+  title: string;
+}

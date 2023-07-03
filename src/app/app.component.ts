@@ -6,8 +6,16 @@ import { RouterModule } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  styles: [],
-  template: `<div class="flex w-full h-full">
+  styles: [
+    `
+      :host {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    `,
+  ],
+  template: `<div class="block w-full h-full">
     <router-outlet></router-outlet>
   </div> `,
 })

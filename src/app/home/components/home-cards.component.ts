@@ -1,29 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Projects } from '../models';
 
 @Component({
   selector: 'app-home-cards',
   standalone: true,
   imports: [CommonModule],
   styles: [],
-  template: `<section
-    aria-labelledby="category-heading"
-    class="pt-24 sm:pt-32 xl:mx-auto xl:max-w-7xl xl:px-8"
-  >
+  template: `<section class="pt-24 sm:pt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
     <div
       class="px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:px-0"
     >
-      <h2
-        id="category-heading"
-        class="text-2xl font-bold tracking-tight text-gray-900"
-      >
-        Shop by Category
-      </h2>
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900">Projects</h2>
       <a
         href="#"
         class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
       >
-        Browse all categories
+        Browse all Projects
         <span aria-hidden="true"> &rarr;</span>
       </a>
     </div>
@@ -56,86 +49,6 @@ import { CommonModule } from '@angular/common';
                 >New Arrivals</span
               >
             </a>
-            <a
-              href="#"
-              class="relative flex flex-col w-56 p-6 overflow-hidden rounded-lg h-80 hover:opacity-75 xl:w-auto"
-            >
-              <span aria-hidden="true" class="absolute inset-0">
-                <img
-                  src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-02.jpg"
-                  alt=""
-                  class="object-cover object-center w-full h-full"
-                />
-              </span>
-              <span
-                aria-hidden="true"
-                class="absolute inset-x-0 bottom-0 opacity-50 h-2/3 bg-gradient-to-t from-gray-800"
-              ></span>
-              <span
-                class="relative mt-auto text-xl font-bold text-center text-white"
-                >Productivity</span
-              >
-            </a>
-            <a
-              href="#"
-              class="relative flex flex-col w-56 p-6 overflow-hidden rounded-lg h-80 hover:opacity-75 xl:w-auto"
-            >
-              <span aria-hidden="true" class="absolute inset-0">
-                <img
-                  src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-04.jpg"
-                  alt=""
-                  class="object-cover object-center w-full h-full"
-                />
-              </span>
-              <span
-                aria-hidden="true"
-                class="absolute inset-x-0 bottom-0 opacity-50 h-2/3 bg-gradient-to-t from-gray-800"
-              ></span>
-              <span
-                class="relative mt-auto text-xl font-bold text-center text-white"
-                >Workspace</span
-              >
-            </a>
-            <a
-              href="#"
-              class="relative flex flex-col w-56 p-6 overflow-hidden rounded-lg h-80 hover:opacity-75 xl:w-auto"
-            >
-              <span aria-hidden="true" class="absolute inset-0">
-                <img
-                  src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-05.jpg"
-                  alt=""
-                  class="object-cover object-center w-full h-full"
-                />
-              </span>
-              <span
-                aria-hidden="true"
-                class="absolute inset-x-0 bottom-0 opacity-50 h-2/3 bg-gradient-to-t from-gray-800"
-              ></span>
-              <span
-                class="relative mt-auto text-xl font-bold text-center text-white"
-                >Accessories</span
-              >
-            </a>
-            <a
-              href="#"
-              class="relative flex flex-col w-56 p-6 overflow-hidden rounded-lg h-80 hover:opacity-75 xl:w-auto"
-            >
-              <span aria-hidden="true" class="absolute inset-0">
-                <img
-                  src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-03.jpg"
-                  alt=""
-                  class="object-cover object-center w-full h-full"
-                />
-              </span>
-              <span
-                aria-hidden="true"
-                class="absolute inset-x-0 bottom-0 opacity-50 h-2/3 bg-gradient-to-t from-gray-800"
-              ></span>
-              <span
-                class="relative mt-auto text-xl font-bold text-center text-white"
-                >Sale</span
-              >
-            </a>
           </div>
         </div>
       </div>
@@ -146,10 +59,31 @@ import { CommonModule } from '@angular/common';
         href="#"
         class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
       >
-        Browse all categories
+        Browse all Projects
         <span aria-hidden="true"> &rarr;</span>
       </a>
     </div>
   </section>`,
 })
-export class HomeCardsComponent {}
+export class HomeCardsComponent {
+  projects: Projects[] = [
+    {
+      image: 'assets/projects/myFlix-React-pic.PNG',
+      title: 'myFlix React',
+    },
+    {
+      image: 'assets/projects/angular-profile-pic.PNG',
+      title: 'myFlix Angular',
+    },
+    {
+      image: 'assets/projects/pokedex-app-pic.PNG',
+      title: 'Pokedex',
+    },
+    {
+      image: 'assets/projects/pizza-app-pic.PNG',
+      title: 'Pizza App',
+    },
+  ];
+
+  constructor() {}
+}
