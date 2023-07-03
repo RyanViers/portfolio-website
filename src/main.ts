@@ -1,15 +1,8 @@
-import { provideHttpClient } from '@angular/common/http';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import {
-  bootstrapApplication,
-  platformBrowser,
-} from '@angular/platform-browser';
-
-//import { AppModule } from './app/app.module';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
-import { routes } from './app/app.routes';
+import { APP_ROUTE } from './app/app.route';
 
 bootstrapApplication(AppComponent, {
-  providers: [provideHttpClient(), provideRouter(routes)],
-}).catch((err) => console.error(err));
+  providers: [provideRouter(APP_ROUTE)],
+});
