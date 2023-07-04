@@ -8,4 +8,6 @@ export interface BackgroundAction {
 export interface Projects {
   image: string;
   title: string;
+  description: string;
+  technologies: string;
 }

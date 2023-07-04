@@ -7,10 +7,19 @@ export const APP_ROUTE: Route[] = [
       import('./home/home.component').then((c) => c.HomeComponent),
   },
   {
-    path: 'check',
+    path: 'about',
     loadComponent: () =>
-      import('./check/check.component').then((c) => c.CheckComponent),
-    loadChildren: () => import('./check/check.route'),
+      import('./about/about.component').then((c) => c.AboutComponent),
+  },
+  {
+    path: 'contact',
+    loadComponent: () =>
+      import('./contact/contact.component').then((c) => c.ContactComponent),
+  },
+  {
+    path: 'projects',
+    loadComponent: () =>
+      import('./projects/projects.component').then((c) => c.ProjectsComponent),
   },
   {
     path: `**`,

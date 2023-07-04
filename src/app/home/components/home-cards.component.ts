@@ -1,3 +1,4 @@
+import { TailwindIconsService } from './../../utils/services/icons.service';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Projects } from '../models';
@@ -21,38 +22,43 @@ import { Projects } from '../models';
       </a>
     </div>
 
-    <div class="flow-root mt-4">
-      <div class="-my-2">
-        <div
-          class="box-content relative py-2 overflow-x-auto h-80 xl:overflow-visible"
-        >
-          <div
-            class="absolute flex px-4 space-x-8 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0"
-          >
-            <a
-              href="#"
-              class="relative flex flex-col w-56 p-6 overflow-hidden rounded-lg h-80 hover:opacity-75 xl:w-auto"
-            >
-              <span aria-hidden="true" class="absolute inset-0">
-                <img
-                  src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-01.jpg"
-                  alt=""
-                  class="object-cover object-center w-full h-full"
-                />
-              </span>
-              <span
-                aria-hidden="true"
-                class="absolute inset-x-0 bottom-0 opacity-50 h-2/3 bg-gradient-to-t from-gray-800"
-              ></span>
-              <span
-                class="relative mt-auto text-xl font-bold text-center text-white"
-                >New Arrivals</span
-              >
+    <ul
+      role="list"
+      class="mx-10 grid max-w-max grid-cols-1 gap-x-6 gap-y-20 md:grid-cols-2 lg:grid-cols-4 lg:max-w-none lg:gap-x-8 "
+    >
+      <li *ngFor="let p of projects">
+        <img
+          class="aspect-[3/2] w-full rounded-2xl object-cover"
+          [src]="p.image"
+        />
+        <h3 class="mt-6 text-lg font-semibold leading-8 text-gray-900">
+          {{ p.title }}
+        </h3>
+        <p class="text-base leading-7 text-blue-600">{{ p.technologies }}</p>
+        <p class="mt-4 text-base leading-7 text-gray-600">
+          {{ p.description }}
+        </p>
+
+        <ul role="list" class="mt-6 flex gap-x-6">
+          <li>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">Twitter</span>
+              <img
+                class="w-8 h-8"
+                src="assets/social-icons/icons8-github.svg"
+                a
+              />
             </a>
-          </div>
-        </div>
-      </div>
-    </div>
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="w-8 h-8" [innerHTML]="getIcon(7)">LinkedIn</span>
+             
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
 
     <div class="px-4 mt-6 sm:hidden">
       <a
@@ -70,20 +76,37 @@ export class HomeCardsComponent {
     {
       image: 'assets/projects/myFlix-React-pic.PNG',
       title: 'myFlix React',
+      description:
+        'This project is the client-side version of a myFlix application built using React. It uses a MongoDB database to store data about registered users and movies. It uses a RESTful API to communicate with the the database and the client.',
+      technologies: 'React, Redux, React-Bootstrap, Axios, Parcel',
     },
     {
       image: 'assets/projects/angular-profile-pic.PNG',
       title: 'myFlix Angular',
+      description:
+        'This project is the client-side version of a myFlix application built using Angular. It uses a MongoDB database to store data about registered users and movies. It uses a RESTful API to communicate with the the database and the client.',
+      technologies: 'Angular, Angular Material',
     },
     {
       image: 'assets/projects/pokedex-app-pic.PNG',
       title: 'Pokedex',
+      description:
+        'This is a small application made with HTML, CSS, and JavaScript. The Pokémon are loaded from an external API. The user can then search for a Pokémon by name and see its details.',
+      technologies: 'HTML, CSS, JavaScript, jQuery, Bootstrap',
     },
     {
-      image: 'assets/projects/pizza-app-pic.PNG',
+      image: 'assets/projects/pizza-pic.PNG',
       title: 'Pizza App',
+      description:
+        'This is an application for a pizza resturant that allows users to build their own pizza and place an order. Users can also buy specialty pizzas and manage their profiles.',
+      technologies:
+        'Angular, Ionic, Tailwind, AWS, Amplify, AppSync, DynamoDB, Cognito, S3, Lambda, CloudFormation',
     },
   ];
 
-  constructor() {}
+  constructor(private icons: TailwindIconsService) {}
+
+  getIcon(num: number) {
+    return this.icons.getIcon(num);
+  }
 }
