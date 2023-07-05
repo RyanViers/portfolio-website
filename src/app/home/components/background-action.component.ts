@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BackgroundAction } from '../models';
+import { BackgroundAction } from '../../utils/models';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-background-action',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   styles: [],
   template: `<section
-    aria-labelledby="social-impact-heading"
     class="px-4 pt-24 mx-auto max-w-7xl sm:px-6 sm:pt-32 lg:px-8"
   >
     <div class="relative overflow-hidden rounded-lg">
@@ -35,7 +35,7 @@ import { BackgroundAction } from '../models';
             {{ options?.description }}
           </p>
           <button
-            (click)="options?.action()"
+            [routerLink]="options?.link"
             class="block w-full px-8 py-3 mt-8 text-base font-medium text-gray-900 bg-white border border-transparent rounded-md hover:bg-gray-100 sm:w-auto"
           >
             Click Here

@@ -1,13 +1,12 @@
 import { HeaderComponent } from './../components/header/header.component';
 import { HomeInfoCardsComponent } from './components/home-info-cards.component';
-import { HomeCardsComponent } from './components/home-cards.component';
 import { BackgroundActionComponent } from './components/background-action.component';
 import { FooterComponent } from './../components/footer/footer.component';
 import { HomeHeroComponent } from './components/home-hero.component';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { BackgroundAction } from './models';
+import { BackgroundAction } from '../utils/models';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +17,6 @@ import { BackgroundAction } from './models';
     HeaderComponent,
     FooterComponent,
     BackgroundActionComponent,
-    HomeCardsComponent,
     HomeInfoCardsComponent,
   ],
   standalone: true,
@@ -27,12 +25,9 @@ import { BackgroundAction } from './models';
     <!-- Header -->
     <app-header></app-header>
 
-    <!-- Hero Section -->
-    <app-home-hero></app-home-hero>
-
     <main class="mb-8">
-      <!-- Cards Section -->
-      <app-home-cards></app-home-cards>
+      <!-- Hero Section -->
+      <app-home-hero></app-home-hero>
 
       <!-- Featured section -->
       <app-background-action
@@ -51,24 +46,19 @@ import { BackgroundAction } from './models';
     <app-footer></app-footer>
   </div> `,
 })
-export class HomeComponent {
+export default class HomeComponent {
   backgroundActionOptions: BackgroundAction = {
-    title: 'Get Started',
-    description: 'Start your journey with us',
-    image:
-      'https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-01.jpg',
-    action: () => {
-      console.log('clicked');
-    },
+    title: 'Projects',
+    description: 'Check out the work I have done so far!',
+    image: 'assets/content/code-1.webp',
+    link: '/projects',
   };
   backgroundActionOptions2: BackgroundAction = {
     title: 'This is a test',
     description: 'Lets see if this works',
     image:
       'https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-02.jpg',
-    action: () => {
-      console.log('clicked twice');
-    },
+    link: '/contact',
   };
   constructor() {}
 }

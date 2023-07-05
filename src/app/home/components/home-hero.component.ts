@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   styles: [],
   template: ` <div
-    class="bg-white relative p-3 md:p-12 max-w-7xl px-4 sm:px-6 lg:px-8"
+    class="bg-white relative px-4 pt-24 mx-auto max-w-7xl sm:px-6  lg:px-8"
   >
     <div class="relative">
       <div class="mx-auto max-w-7xl">

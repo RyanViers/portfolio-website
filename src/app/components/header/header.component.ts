@@ -1,7 +1,7 @@
 import { TailwindIconsService } from './../../utils/services/icons.service';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -75,25 +75,25 @@ import { Router, RouterModule } from '@angular/router';
       <nav class="hidden lg:flex lg:space-x-8 lg:py-2" aria-label="Global">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <button
-          [routerLink]="['']"
+          routerLink="/home"
           class="bg-gray-900 text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
         >
           Home
         </button>
         <button
-          [routerLink]="['about']"
+          routerLink="/about"
           class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
         >
           About
         </button>
         <button
-          [routerLink]="['projects']"
+          routerLink="/projects"
           class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
         >
           Projects
         </button>
         <button
-          [routerLink]="['contact']"
+          routerLink="/contact"
           class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
         >
           Contact
@@ -109,25 +109,25 @@ import { Router, RouterModule } from '@angular/router';
       <div class="space-y-1 px-2 pb-3 pt-2">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <button
-          [routerLink]="['']"
+          routerLink="/home"
           class="bg-gray-900 text-white block rounded-md py-2 px-3 text-base font-medium"
         >
           Home
         </button>
         <button
-          [routerLink]="['about']"
+          routerLink="/about"
           class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md py-2 px-3 text-base font-medium"
         >
           About
         </button>
         <button
-          [routerLink]="['projects']"
+          routerLink="/projects"
           class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md py-2 px-3 text-base font-medium"
         >
           Projects
         </button>
         <button
-          [routerLink]="['contact']"
+          routerLink="/contact"
           class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md py-2 px-3 text-base font-medium"
         >
           Contact
