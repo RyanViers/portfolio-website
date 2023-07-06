@@ -30,7 +30,7 @@ import { RouterModule } from '@angular/router';
                 >
                   Reach Out and Say Hello
                   <a
-                    href="#"
+                    routerLink="/contact"
                     class="whitespace-nowrap font-semibold text-indigo-600"
                     ><span class="absolute inset-0" aria-hidden="true"></span
                     >Contact Me <span aria-hidden="true">&rarr;</span></a
@@ -40,7 +40,7 @@ import { RouterModule } from '@angular/router';
               <h1
                 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
               >
-                Ryan Viers - Full Stack Developer
+                Ryan Viers - Full Stack Web Developer
               </h1>
               <p class="mt-6 text-sm sm:text-lg leading-8 text-gray-600">
                 I'm a Full Stack Developer, skilled in using a multitude of
@@ -57,7 +57,7 @@ import { RouterModule } from '@angular/router';
                   >GitHub Profile</a
                 >
                 <a
-                  href="#"
+                  routerLink="/projects"
                   class="text-sm font-semibold leading-6 text-gray-900"
                   >Explore Projects <span aria-hidden="true">→</span></a
                 >
@@ -70,7 +70,7 @@ import { RouterModule } from '@angular/router';
         <img
           class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
           src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
-          alt=""
+          loading="lazy"
         />
       </div>
     </div>

@@ -50,7 +50,7 @@ export const projects: Projects[] = [
     image: 'assets/projects/myFlix-React-pic.PNG',
     title: 'myFlix React',
     description:
-      'This project is the client-side version of a myFlix application built using React. It uses a MongoDB database to store data about registered users and movies. It uses a RESTful API to communicate with the the database and the client.',
+      'MyFlix, a client-side app built with React, employs MongoDB for data storage and a RESTful API for smooth client-database interaction.',
     technologies: 'React, Redux, React-Bootstrap, Axios, Parcel',
     github: 'https://github.com/RyanViers/myFlix-client',
     demo: 'https://ryan-viers-08aa31.netlify.app/',
@@ -58,8 +58,7 @@ export const projects: Projects[] = [
   {
     image: 'assets/projects/angular-profile-pic.PNG',
     title: 'myFlix Angular',
-    description:
-      'This project is the client-side version of a myFlix application built using Angular. It uses a MongoDB database to store data about registered users and movies. It uses a RESTful API to communicate with the the database and the client.',
+    description: `MyFlix's client-side application, constructed with Angular, utilizes MongoDB for data storage, complemented by a RESTful API for seamless client-database connectivity.`,
     technologies: 'Angular, Angular Material',
     github: 'https://github.com/RyanViers/myFlix-Angular-client',
     demo: 'https://ryanviers.github.io/myFlix-Angular-client/',
@@ -68,7 +67,7 @@ export const projects: Projects[] = [
     image: 'assets/projects/pokedex-app-pic.PNG',
     title: 'Pokedex',
     description:
-      'This is a small application made with HTML, CSS, and JavaScript. The Pokémon are loaded from an external API. The user can then search for a Pokémon by name and see its details.',
+      'A compact HTML, CSS, and JavaScript application that fetches Pokémon from an external API, enabling user search for specific Pokémon and their details.',
     technologies: 'HTML, CSS, JavaScript, jQuery, Bootstrap',
     github: 'https://github.com/RyanViers/pokedex-app',
     demo: 'https://ryanviers.github.io/pokedex-app/',
@@ -76,18 +75,15 @@ export const projects: Projects[] = [
   {
     image: 'assets/projects/pizza-pic.PNG',
     title: 'Pizza App',
-    description:
-      'This is an application for a pizza resturant that allows users to build their own pizza and place an order. Users can also buy specialty pizzas and manage their profiles.',
-    technologies:
-      'Angular, Ionic, Tailwind, AWS, Amplify, AppSync, DynamoDB, Cognito, S3, Lambda, CloudFormation',
+    description: `An interactive pizza restaurant application, enabling users to custom-build pizzas, order specialty pizzas, and manage their profiles.`,
+    technologies: 'Angular, Ionic, Tailwind, AWS, Amplify, AppSync, DynamoDB',
     github: 'https://github.com/RyanViers/pizza-app',
     demo: 'https://github.com/RyanViers/pizza-app',
   },
   {
     image: 'assets/projects/api-pic.PNG',
     title: 'myFlix REST API',
-    description:
-      'This API is the server-side code for the Angular and React myFlix apps. This API allows users to create an account, see information about movies, directors and genres, add and remove movies to their favorites, edit their personal info and more. This is an RESTful API and includes HTTP authentication with JWT passport authentication, bcrypt password hashing, express-validator for server-side input validation and CORS data security.',
+    description: `The myFlix API, powering both Angular and React versions, provides comprehensive user features, complete with JWT authentication, bcrypt hashing, express-validator input validation, and CORS security.`,
     technologies: 'MongoDB, Express, Mongoose, Morgan, Node.js',
     github: 'https://github.com/RyanViers/movie-api',
     demo: 'https://github.com/RyanViers/movie-api',
@@ -95,8 +91,7 @@ export const projects: Projects[] = [
   {
     image: 'assets/projects/chat-pic.PNG',
     title: 'Chat App',
-    description:
-      'This is a chat application that allows users to create a username and join a chat room. Users can send messages to each other and see when other users join or leave the chat room.',
+    description: `A user-friendly chat application, facilitating username creation, chat room joining, and real-time messaging, with notifications for user activity.`,
     technologies: 'React Native, Node.js, Express',
     github: 'https://github.com/RyanViers/chat',
     demo: 'https://github.com/RyanViers/chat',
@@ -104,10 +99,8 @@ export const projects: Projects[] = [
   {
     image: 'assets/projects/meet_screenshot.PNG',
     title: 'Meet App',
-    description:
-      'This application was built with React.js using a test-driven development (TDD) approach. The app is a serverless, progressive web application (PWA) that uses the Google Calander API to display upcoming events in cites around the world. The user can select the number of events and the city they want to see events for. The app uses a pie chart and a scatter chart to display number of events per city and the code language for the events.',
-    technologies:
-      'React, Jest, Cucumber, Puppeteer, Enzyme, Google Calander API, AWS',
+    description: `A React.js-based serverless PWA, developed using TDD. It employs Google Calendar API to showcase upcoming global events, allowing user customization by event count and city, with data visualization through pie and scatter charts.`,
+    technologies: 'React, Jest, Cucumber, Puppeteer, Enzyme, AWS',
     github: 'https://github.com/RyanViers/meet',
     demo: 'https://ryanviers.github.io/meet/',
   },

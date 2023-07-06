@@ -17,12 +17,13 @@ import { Projects, projects } from '../utils/models';
     >
       <li
         *ngFor="let p of projects"
-        class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
+        class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-[#fefefe] text-center shadow"
       >
         <div class="flex flex-1 flex-col p-8">
           <img
             class="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
             [src]="p.image"
+            loading="lazy"
           />
           <h3 class="mt-6 text-sm font-medium text-gray-900">{{ p.title }}</h3>
           <dl class="mt-1 flex flex-grow flex-col justify-between">
@@ -46,6 +47,7 @@ import { Projects, projects } from '../utils/models';
                 <img
                   class="w-5 h-5"
                   src="assets/social-icons/icons8-github.svg"
+                  loading="lazy"
                 />
                 GitHub
               </a>

@@ -76,7 +76,7 @@ import { RouterModule } from '@angular/router';
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <button
           routerLink="/home"
-          class="bg-gray-900 text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
         >
           Home
         </button>

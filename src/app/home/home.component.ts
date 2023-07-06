@@ -48,16 +48,16 @@ import { BackgroundAction } from '../utils/models';
 })
 export default class HomeComponent {
   backgroundActionOptions: BackgroundAction = {
-    title: 'Projects',
-    description: 'Check out the work I have done so far!',
+    title: 'Curious to Know More?',
+    description: `Navigate to the 'About' section for a deeper dive into my journey, skills, and work ethic`,
     image: 'assets/content/code-1.webp',
-    link: '/projects',
+    link: '/about',
   };
   backgroundActionOptions2: BackgroundAction = {
-    title: 'This is a test',
-    description: 'Lets see if this works',
+    title: 'Ready to Connect?',
+    description: `Head to the 'Contact' section to get in touch and start discussing your project needs`,
     image:
-      'https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-02.jpg',
+      'assets/content/code2.jpeg',
     link: '/contact',
   };
   constructor() {}
