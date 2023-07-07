@@ -17,6 +17,16 @@ export class TailwindIconsService {
       TailwindIconType.ARROW_RIGHT,
       TailwindIconType.ARROW_LEFT,
       TailwindIconType.BARS,
+      TailwindIconType.ENVELOPE,
+      TailwindIconType.IMAGE,
+      TailwindIconType.DOCUMENT,
+      TailwindIconType.GLOBE,
+      TailwindIconType.PEOPLE,
+      TailwindIconType.SHARE,
+      TailwindIconType.BELL_ALERT,
+      TailwindIconType.EXCLAMATION_TRIANGLE,
+      TailwindIconType.COMPASS,
+      TailwindIconType.CHECK_CIRCLE,
     ],
     this.sanitizer
   );
@@ -42,6 +52,26 @@ export class TailwindIconsService {
         return this.icons.get(TailwindIconType.ARROW_LEFT);
       case 9:
         return this.icons.get(TailwindIconType.BARS);
+      case 10:
+        return this.icons.get(TailwindIconType.ENVELOPE);
+      case 11:
+        return this.icons.get(TailwindIconType.IMAGE);
+      case 12:
+        return this.icons.get(TailwindIconType.DOCUMENT);
+      case 13:
+        return this.icons.get(TailwindIconType.GLOBE);
+      case 14:
+        return this.icons.get(TailwindIconType.PEOPLE);
+      case 15:
+        return this.icons.get(TailwindIconType.SHARE);
+      case 16:
+        return this.icons.get(TailwindIconType.BELL_ALERT);
+      case 17:
+        return this.icons.get(TailwindIconType.EXCLAMATION_TRIANGLE);
+      case 18:
+        return this.icons.get(TailwindIconType.COMPASS);
+      case 19:
+        return this.icons.get(TailwindIconType.CHECK_CIRCLE);
       default:
         return '';
     }

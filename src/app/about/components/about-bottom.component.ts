@@ -1,11 +1,14 @@
+import { TailwindIconsService } from './../../utils/services/icons.service';
 import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
+import { AboutBottom, aboutBottom } from '../models';
 
 @Component({
   selector: 'app-about-bottom',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, LazyLoadDirective],
   styles: [],
   template: `<!-- CTA section -->
     <div class="relative isolate -z-10 pb-8 mt-32 sm:mt-40">
@@ -15,8 +18,7 @@ import { CommonModule } from '@angular/common';
         >
           <img
             class="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
-            src="https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-            loading="lazy"
+            [appLazyLoad]="pic"
           />
           <div class="w-full flex-auto">
             <h2
@@ -32,95 +34,12 @@ import { CommonModule } from '@angular/common';
               role="list"
               class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-white sm:grid-cols-2"
             >
-              <li class="flex gap-x-3">
-                <svg
-                  class="h-7 w-5 flex-none"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Expertise Across the Stack
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  class="h-7 w-5 flex-none"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Project Ownership
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  class="h-7 w-5 flex-none"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Continuous Support
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  class="h-7 w-5 flex-none"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Transparent Communication
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  class="h-7 w-5 flex-none"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Adaptability
-              </li>
-              <li class="flex gap-x-3">
-                <svg
-                  class="h-7 w-5 flex-none"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Result-driven Approach
+              <li *ngFor="let b of bottomList" class="flex gap-x-3">
+                <span
+                  class="w-6 h-6 text-green-500"
+                  [innerHTML]="getIcon(b.icon)"
+                ></span>
+                {{ b.title }}
               </li>
             </ul>
             <div class="mt-10 flex">
@@ -144,4 +63,14 @@ import { CommonModule } from '@angular/common';
       </div>
     </div>`,
 })
-export class AboutBottomComponent {}
+export class AboutBottomComponent {
+  bottomList: AboutBottom[] = aboutBottom;
+  pic: string =
+    'https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80';
+
+  constructor(private icons: TailwindIconsService) {}
+
+  getIcon(num: number) {
+    return this.icons.getIcon(num);
+  }
+}

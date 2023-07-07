@@ -1,3 +1,4 @@
+import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackgroundAction } from '../../utils/models';
@@ -6,7 +7,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-background-action',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, LazyLoadDirective],
   styles: [],
   template: `<section
     class="px-4 pt-24 mx-auto max-w-7xl sm:px-6 sm:pt-32 lg:px-8"
@@ -14,7 +15,7 @@ import { RouterModule } from '@angular/router';
     <div class="relative overflow-hidden rounded-lg">
       <div class="absolute inset-0">
         <img
-          [src]="options?.image"
+          [appLazyLoad]="options?.image"
           alt=""
           class="object-cover object-center w-full h-full"
         />
@@ -47,7 +48,5 @@ import { RouterModule } from '@angular/router';
 })
 export class BackgroundActionComponent {
   @Input() options: BackgroundAction | undefined;
-  constructor() {
-    console.log(this.options);
-  }
+  constructor() {}
 }

@@ -1,3 +1,4 @@
+import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { TailwindIconsService } from './../utils/services/icons.service';
 import { FooterComponent } from './../components/footer/footer.component';
 import { Component } from '@angular/core';
@@ -8,7 +9,7 @@ import { Projects, projects } from '../utils/models';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent],
+  imports: [CommonModule, HeaderComponent, FooterComponent, LazyLoadDirective],
   styles: [],
   template: `<app-header></app-header>
     <ul
@@ -22,8 +23,7 @@ import { Projects, projects } from '../utils/models';
         <div class="flex flex-1 flex-col p-8">
           <img
             class="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
-            [src]="p.image"
-            loading="lazy"
+            [appLazyLoad]="p.image"
           />
           <h3 class="mt-6 text-sm font-medium text-gray-900">{{ p.title }}</h3>
           <dl class="mt-1 flex flex-grow flex-col justify-between">
@@ -44,11 +44,7 @@ import { Projects, projects } from '../utils/models';
                 href="{{ p.github }}"
                 class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
               >
-                <img
-                  class="w-5 h-5"
-                  src="assets/social-icons/icons8-github.svg"
-                  loading="lazy"
-                />
+                <img class="w-5 h-5" [appLazyLoad]="github" />
                 GitHub
               </a>
             </div>
@@ -69,6 +65,7 @@ import { Projects, projects } from '../utils/models';
 })
 export default class ProjectsComponent {
   projects: Projects[] = projects;
+  github: string = 'assets/social-icons/icons8-github.svg';
 
   constructor(private icons: TailwindIconsService) {}
 
