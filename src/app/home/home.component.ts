@@ -27,10 +27,11 @@ import { BackgroundAction } from '../utils/models';
 
     <main class="mb-8">
       <!-- Hero Section -->
-      <app-home-hero></app-home-hero>
+      <app-home-hero class="mb-8 md:mb-0"></app-home-hero>
 
       <!-- Featured section -->
       <app-background-action
+        class="mt-6"
         [options]="backgroundActionOptions"
       ></app-background-action>
 
@@ -56,8 +57,7 @@ export default class HomeComponent {
   backgroundActionOptions2: BackgroundAction = {
     title: 'Ready to Connect?',
     description: `Head to the 'Contact' section to get in touch and start discussing your project needs`,
-    image:
-      'assets/content/code2.jpeg',
+    image: 'assets/content/code2.jpeg',
     link: '/contact',
   };
   constructor() {}

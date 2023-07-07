@@ -3,12 +3,14 @@ import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InfoCard, infoCards } from 'src/app/utils/models';
+import { fader, opacityScale } from 'src/app/utils/animations';
 
 @Component({
   selector: 'app-home-info-cards',
   standalone: true,
   imports: [CommonModule, RouterModule, LazyLoadDirective],
   styles: [],
+  animations: [opacityScale, fader],
   template: `<section
     class="max-w-xl px-4 pt-24 mx-auto sm:px-6 sm:pt-32 lg:max-w-7xl lg:px-8"
   >
@@ -37,6 +39,7 @@ import { InfoCard, infoCards } from 'src/app/utils/models';
           class="overflow-hidden rounded-lg aspect-h-2 aspect-w-3 lg:aspect-h-6 lg:aspect-w-5 group-hover:opacity-75"
         >
           <img
+            @fader
             [appLazyLoad]="card?.image"
             class="object-cover object-center w-full h-full"
           />
