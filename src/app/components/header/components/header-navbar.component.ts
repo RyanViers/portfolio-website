@@ -9,9 +9,7 @@ import { RouterModule } from '@angular/router';
   styles: [``],
   template: `<nav
     class="hidden lg:flex lg:space-x-8 lg:py-2"
-    aria-label="Global"
   >
-    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
     <button
       routerLink="/home"
       class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"

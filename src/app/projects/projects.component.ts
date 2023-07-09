@@ -1,6 +1,6 @@
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
-import { TailwindIconsService } from './../utils/services/icons.service';
-import { FooterComponent } from './../components/footer/footer.component';
+import { TailwindIconsService } from '../utils/services/icons.service';
+import { FooterComponent } from '../components/footer/footer.component';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../components/header/header.component';
