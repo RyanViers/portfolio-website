@@ -1,6 +1,8 @@
+import { HeaderService } from './../header.service';
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Observable } from 'rxjs';
 import { TailwindIconsService } from 'src/app/utils/services/icons.service';
 
 @Component({
@@ -40,7 +42,7 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
       </div>
     </div>
     <div
-      (click)="mobileDropdown = !mobileDropdown"
+      (click)="setMenuToggle()"
       class="relative z-10 flex items-center lg:hidden"
     >
       <!-- Mobile menu button -->
@@ -50,10 +52,16 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
-        <span *ngIf="!mobileDropdown" class="w-6 h-6" [innerHTML]="getIcon(9)"
+        <span
+          *ngIf="!($menuToggle | async)"
+          class="w-6 h-6"
+          [innerHTML]="getIcon(9)"
           >Open menu</span
         >
-        <span *ngIf="mobileDropdown" class="w-6 h-6" [innerHTML]="getIcon(1)"
+        <span
+          *ngIf="$menuToggle | async"
+          class="w-6 h-6"
+          [innerHTML]="getIcon(1)"
           >Open menu</span
         >
       </button>
@@ -61,10 +69,17 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
   </div>`,
 })
 export class HeaderTopComponent {
-  @Input('mobileDropdown') mobileDropdown: boolean | undefined;
-  constructor(private icons: TailwindIconsService) {}
+  $menuToggle = this.header.$menuToggle;
+  constructor(
+    private icons: TailwindIconsService,
+    private header: HeaderService
+  ) {}
 
   getIcon(num: number) {
     return this.icons.getIcon(num);
+  }
+
+  setMenuToggle() {
+    this.header.setMenuToggle();
   }
 }
