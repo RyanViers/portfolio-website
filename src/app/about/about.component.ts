@@ -15,7 +15,7 @@ import { HeaderComponent } from '../components/header/header.component';
     FooterComponent,
     AboutHeaderComponent,
     AboutContentComponent,
-    AboutBottomComponent
+    AboutBottomComponent,
   ],
   styles: [],
   template: `<app-header></app-header>
@@ -24,7 +24,6 @@ import { HeaderComponent } from '../components/header/header.component';
         <!-- Background -->
         <div
           class="absolute inset-x-0 top-4 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
-          aria-hidden="true"
         >
           <div
             class="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
@@ -40,7 +39,6 @@ import { HeaderComponent } from '../components/header/header.component';
 
         <!-- Bottom section -->
         <app-about-bottom></app-about-bottom>
-        
       </main>
     </div>
 

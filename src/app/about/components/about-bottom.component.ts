@@ -46,7 +46,7 @@ import { AboutBottom, aboutBottom } from '../models';
               <a
                 routerLink="/contact"
                 class="text-sm font-semibold leading-6 text-indigo-400"
-                >Contact Me <span aria-hidden="true">&rarr;</span></a
+                >Contact Me <span>&rarr;</span></a
               >
             </div>
           </div>
@@ -54,7 +54,6 @@ import { AboutBottom, aboutBottom } from '../models';
       </div>
       <div
         class="absolute inset-x-0 -top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
-        aria-hidden="true"
       >
         <div
           class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"

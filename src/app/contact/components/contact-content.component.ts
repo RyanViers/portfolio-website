@@ -38,13 +38,13 @@ import { ContactList, contactList } from '../models';
               *ngIf="c.emailLink"
               [href]="c.emailLink"
               class="text-sm font-semibold leading-6 text-indigo-500"
-              >{{ c.linkText }} <span aria-hidden="true">&rarr;</span></a
+              >{{ c.linkText }} <span>&rarr;</span></a
             >
             <a
               *ngIf="c.link"
               [routerLink]="c.link"
               class="text-sm font-semibold leading-6 text-indigo-500"
-              >{{ c.linkText }} <span aria-hidden="true">&rarr;</span></a
+              >{{ c.linkText }} <span>&rarr;</span></a
             >
           </p>
         </div>

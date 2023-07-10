@@ -1,12 +1,12 @@
-import { HeaderComponent } from './components/header/header.component';
-import { HomeInfoCardsComponent } from './home/components/home-info-cards.component';
-import { BackgroundActionComponent } from './home/components/background-action.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HomeHeroComponent } from './home/components/home-hero.component';
+import { HeaderComponent } from '../components/header/header.component';
+import { HomeInfoCardsComponent } from './components/home-info-cards.component';
+import { BackgroundActionComponent } from './components/background-action.component';
+import { FooterComponent } from '../components/footer/footer.component';
+import { HomeHeroComponent } from './components/home-hero.component';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { BackgroundAction } from './utils/models';
+import { BackgroundAction } from '../utils/models';
 
 @Component({
   selector: 'app-home',
