@@ -19,8 +19,8 @@ import { CommonModule } from '@angular/common';
   template: `<app-header></app-header>
     <div class="relative isolate bg-gray-900">
       <div class="mx-auto grid max-w-7xl grid-rows-1 lg:grid-cols-2">
-        <app-contact-content></app-contact-content>
-        <app-contact-logo></app-contact-logo>
+        <app-contact-content />
+        <app-contact-logo />
       </div>
     </div>
     <app-footer></app-footer>`,
