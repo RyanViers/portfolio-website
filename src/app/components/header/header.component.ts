@@ -22,11 +22,11 @@ import { HeaderMobileComponent } from './components/header-mobile.component';
     <div
       class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
     >
-      <app-header-top></app-header-top>
-      <app-header-navbar></app-header-navbar>
+      <app-header-top />
+      <app-header-navbar />
     </div>
 
-    <app-header-mobile *ngIf="$menuToggle | async"></app-header-mobile>
+    <app-header-mobile *ngIf="$menuToggle | async" />
   </header>`,
 })
 export class HeaderComponent {

@@ -11,7 +11,7 @@ import { Projects, projects } from '../utils/models';
   standalone: true,
   imports: [CommonModule, HeaderComponent, FooterComponent, LazyLoadDirective],
   styles: [],
-  template: `<app-header></app-header>
+  template: `<app-header />
     <ul
       role="list"
       class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-gray-800 p-4"
@@ -61,7 +61,7 @@ import { Projects, projects } from '../utils/models';
         </div>
       </li>
     </ul>
-    <app-footer></app-footer> `,
+    <app-footer /> `,
 })
 export default class ProjectsComponent {
   projects: Projects[] = projects;

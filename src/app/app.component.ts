@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
     `,
   ],
   template: `<div class="block w-full h-full">
-    <router-outlet></router-outlet>
+    <router-outlet />
   </div> `,
 })
 export class AppComponent {

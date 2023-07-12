@@ -8,11 +8,11 @@ import { FooterNavComponent } from './components/footer-nav.component';
   standalone: true,
   imports: [CommonModule, FooterNavComponent, FooterFormComponent],
   styles: [``],
-  template: ` <footer aria-labelledby="footer-heading" class="bg-gray-900">
+  template: ` <footer class="bg-gray-900">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
-        <app-footer-nav></app-footer-nav>
-        <app-footer-form></app-footer-form>
+        <app-footer-nav />
+        <app-footer-form />
       </div>
 
       <div class="py-10 border-t border-gray-800">

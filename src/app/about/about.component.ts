@@ -18,7 +18,7 @@ import { HeaderComponent } from '../components/header/header.component';
     AboutBottomComponent,
   ],
   styles: [],
-  template: `<app-header></app-header>
+  template: `<app-header />
     <div class="bg-gray-900">
       <main class="relative isolate">
         <!-- Background -->
@@ -32,16 +32,16 @@ import { HeaderComponent } from '../components/header/header.component';
         </div>
 
         <!-- Header section -->
-        <app-about-header></app-about-header>
+        <app-about-header />
 
         <!-- Content section -->
-        <app-about-content></app-about-content>
+        <app-about-content />
 
         <!-- Bottom section -->
-        <app-about-bottom></app-about-bottom>
+        <app-about-bottom />
       </main>
     </div>
 
-    <app-footer class="relative"></app-footer>`,
+    <app-footer class="relative" />`,
 })
 export default class AboutComponent {}
