@@ -49,6 +49,7 @@ import { BackgroundAction } from '../utils/models';
   </div> `,
 })
 export default class HomeComponent {
+  
   backgroundActionOptions: BackgroundAction = {
     title: 'Curious to Know More?',
     description: `Navigate to the 'About' section for a deeper dive into my journey, skills, and work ethic`,
