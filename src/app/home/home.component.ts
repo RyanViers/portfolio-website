@@ -22,7 +22,6 @@ import { BackgroundAction } from '../utils/models';
   standalone: true,
   styles: [``],
   template: `<div class="bg-white">
-  
     <!-- Header -->
     <app-header />
 
@@ -31,25 +30,19 @@ import { BackgroundAction } from '../utils/models';
       <app-home-hero class="mb-8 md:mb-0" />
 
       <!-- Featured section -->
-      <app-background-action
-        class="mt-6"
-        [options]="backgroundActionOptions"
-      />
+      <app-background-action class="mt-6" [options]="backgroundActionOptions" />
 
       <!-- Collection section -->
       <app-home-info-cards />
 
       <!-- Featured section -->
-      <app-background-action
-        [options]="backgroundActionOptions2"
-      />
+      <app-background-action [options]="backgroundActionOptions2" />
     </main>
 
     <app-footer />
   </div> `,
 })
 export default class HomeComponent {
-  
   backgroundActionOptions: BackgroundAction = {
     title: 'Curious to Know More?',
     description: `Navigate to the 'About' section for a deeper dive into my journey, skills, and work ethic`,

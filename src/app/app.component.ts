@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  signals: true,
   standalone: true,
   imports: [CommonModule, RouterModule],
   styles: [
