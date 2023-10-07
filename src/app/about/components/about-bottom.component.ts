@@ -1,12 +1,6 @@
 import { TailwindIconsService } from './../../utils/services/icons.service';
 import { RouterModule } from '@angular/router';
-import {
-  Component,
-  OnInit,
-  Signal,
-  WritableSignal,
-  signal,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { AboutBottom, aboutBottom } from '../models';

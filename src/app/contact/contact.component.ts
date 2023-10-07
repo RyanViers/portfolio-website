@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
     ContactLogoComponent,
   ],
   styles: [],
-  template: `<app-header />
+  template: ` <app-header />
     <div class="relative isolate bg-gray-900">
       <div class="mx-auto grid max-w-7xl grid-rows-1 lg:grid-cols-2">
         <app-contact-content />

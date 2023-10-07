@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -21,6 +20,6 @@ import { RouterModule } from '@angular/router';
     </div>
   `,
 })
-export class AppComponent {
+export default class AppComponent {
   title = 'portfolio-website';
 }
