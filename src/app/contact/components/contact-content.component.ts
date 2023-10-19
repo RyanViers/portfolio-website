@@ -34,18 +34,19 @@ import { ContactList, contactList } from '../models';
             {{ c.description }}
           </p>
           <p class="mt-4">
-            <a
-              *ngIf="c.emailLink"
-              [href]="c.emailLink"
-              class="text-sm font-semibold leading-6 text-indigo-500"
-              >{{ c.linkText }} <span>&rarr;</span></a
-            >
-            <a
-              *ngIf="c.link"
-              [routerLink]="c.link"
-              class="text-sm font-semibold leading-6 text-indigo-500"
-              >{{ c.linkText }} <span>&rarr;</span></a
-            >
+            @if (c.emailLink) {
+              <a
+                [href]="c.emailLink"
+                class="text-sm font-semibold leading-6 text-indigo-500"
+                >{{ c.linkText }} <span>&rarr;</span></a
+              >
+            } @else {
+              <a
+                [routerLink]="c.link"
+                class="text-sm font-semibold leading-6 text-indigo-500"
+                >{{ c.linkText }} <span>&rarr;</span></a
+              >
+            }
           </p>
         </div>
       </div>

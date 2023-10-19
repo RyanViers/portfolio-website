@@ -40,7 +40,7 @@ import { AboutList, aboutList } from '../models';
             ></span>
             {{ a.title }}
           </dt>
-          <dd class="inline">{{ a.description }}}</dd>
+          <dd class="inline">{{ a.description }}&#125;</dd>
         </div>
       </dl>
     </div>`,

@@ -18,7 +18,8 @@ import { HeaderMobileComponent } from './components/header-mobile.component';
     HeaderTopComponent,
   ],
   styles: [``],
-  template: `<header class="bg-gray-800">
+  template: `
+  <header class="bg-gray-800">
     <div
       class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
     >
@@ -26,12 +27,16 @@ import { HeaderMobileComponent } from './components/header-mobile.component';
       <app-header-navbar />
     </div>
 
-    <app-header-mobile *ngIf="$menuToggle | async" />
-  </header>`,
+    @if ($menuToggle | async) {
+      <app-header-mobile  />
+    }
+
+  </header>
+  `,
 })
 export class HeaderComponent {
   $menuToggle = this.header.$menuToggle;
-
+  
   constructor(
     private icons: TailwindIconsService,
     private header: HeaderService

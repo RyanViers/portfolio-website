@@ -16,6 +16,7 @@ import { Projects, projects } from '../utils/models';
       role="list"
       class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-gray-800 p-4"
     >
+      
       <li
         *ngFor="let p of projects"
         class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-[#fefefe] text-center shadow"

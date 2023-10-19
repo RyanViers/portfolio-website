@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   styles: [``],
   template: ` <nav class="lg:hidden absolute z-50 w-full bg-gray-800">
     <div class="space-y-1 px-2 pb-3 pt-2">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      
       <button
         routerLink="/home"
         class="bg-gray-900 text-white block rounded-md py-2 px-3 text-base font-medium"

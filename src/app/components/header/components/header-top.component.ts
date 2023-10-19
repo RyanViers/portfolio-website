@@ -1,8 +1,7 @@
 import { HeaderService } from './../header.service';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Observable } from 'rxjs';
 import { TailwindIconsService } from 'src/app/utils/services/icons.service';
 
 @Component({
@@ -16,7 +15,6 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
         <img
           class="block h-8 w-auto"
           src="assets/icon.png"
-          alt="Your Company"
         />
       </div>
     </div>
@@ -24,7 +22,6 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
       class="relative z-0 flex flex-1 items-center justify-center px-2 sm:absolute sm:inset-0"
     >
       <div class="w-full sm:max-w-xs">
-        <label for="search" class="sr-only">Search</label>
         <div class="relative">
           <div
             class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
@@ -49,20 +46,11 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
       <button
         type="button"
         class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
       >
         <span
-          *ngIf="!($menuToggle | async)"
           class="w-6 h-6"
-          [innerHTML]="getIcon(9)"
-          >Open menu</span
-        >
-        <span
-          *ngIf="$menuToggle | async"
-          class="w-6 h-6"
-          [innerHTML]="getIcon(1)"
-          >Open menu</span
+          [innerHTML]="($menuToggle | async) ? getIcon(1) : getIcon(9)"
+          ></span
         >
       </button>
     </div>
