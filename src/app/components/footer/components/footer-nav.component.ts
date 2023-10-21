@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Links } from '../models/models';
 
 @Component({
   selector: 'app-footer-nav',
@@ -9,37 +10,23 @@ import { RouterModule } from '@angular/router';
   styles: [``],
   template: `<div class="grid grid-cols-2 gap-8 xl:col-span-2">
     <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
-      <div>
-        <a
-          routerLink="/home"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
-          >Home</a
-        >
-      </div>
-      <div>
-        <a
-          routerLink="/about"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
-          >About</a
-        >
-      </div>
-    </div>
-    <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
-      <div>
-        <a
-          routerLink="/projects"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
-          >Projects</a
-        >
-      </div>
-      <div>
-        <a
-          routerLink="/contact"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
-          >Contact</a
-        >
-      </div>
+      <div *ngFor="let link of links">
+        
+          <a
+            routerLink="{{ link.url }}"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
+            >{{ link.name }}</a>
+        
+      </div> 
     </div>
   </div>`,
 })
-export class FooterNavComponent {}
+export class FooterNavComponent {
+  links: Links[] = [
+    { name: 'Home', url: '/home' },
+    { name: 'About', url: '/about' },
+    { name: 'Projects', url: '/projects' },
+    { name: 'Contact', url: '/contact' },
+  ];
+  constructor() {}
+}
