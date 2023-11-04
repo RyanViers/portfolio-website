@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { fader, opacityScaleDelayLong } from 'src/app/utils/animations';
@@ -7,7 +6,7 @@ import { fader, opacityScaleDelayLong } from 'src/app/utils/animations';
 @Component({
   selector: 'app-home-hero',
   standalone: true,
-  imports: [CommonModule, RouterModule, LazyLoadDirective],
+  imports: [RouterModule, LazyLoadDirective],
   styles: [],
   animations: [fader, opacityScaleDelayLong],
   template: ` <div

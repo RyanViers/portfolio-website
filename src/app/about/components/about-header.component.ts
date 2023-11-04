@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about-header',
   standalone: true,
-  imports: [CommonModule],
-  styles: [],
   template: `<!-- Header section -->
   <div class="px-6 pt-14 lg:px-8">
     <div class="mx-auto max-w-2xl pt-24 text-center sm:pt-40">

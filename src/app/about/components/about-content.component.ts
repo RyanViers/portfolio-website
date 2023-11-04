@@ -1,6 +1,5 @@
 import { TailwindIconsService } from './../../utils/services/icons.service';
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { AboutList, aboutList } from '../models';
@@ -8,7 +7,7 @@ import { AboutList, aboutList } from '../models';
 @Component({
   selector: 'app-about-content',
   standalone: true,
-  imports: [CommonModule, RouterModule, LazyLoadDirective],
+  imports: [RouterModule, LazyLoadDirective],
   styles: [],
   template: `<!-- Image section -->
     <div class="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
@@ -32,16 +31,18 @@ import { AboutList, aboutList } from '../models';
       <dl
         class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-16"
       >
-        <div *ngFor="let a of aboutList" class="relative pl-9">
-          <dt class="inline font-semibold text-white">
-            <span
-              class="absolute left-1 top-1 h-5 w-5 text-indigo-500"
-              [innerHTML]="getIcon(a.icon)"
-            ></span>
-            {{ a.title }}
-          </dt>
-          <dd class="inline">{{ a.description }}&#125;</dd>
-        </div>
+        @for (a of aboutList; track a.icon) {
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-white">
+              <span
+                class="absolute left-1 top-1 h-5 w-5 text-indigo-500"
+                [innerHTML]="getIcon(a.icon)"
+              ></span>
+              {{ a.title }}
+            </dt>
+            <dd class="inline">{{ a.description }}&#125;</dd>
+          </div>
+        }
       </dl>
     </div>`,
 })

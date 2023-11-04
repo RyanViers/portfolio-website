@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-footer-form',
   standalone: true,
-  imports: [CommonModule],
-  styles: [``],
-  template: `<div class="mt-12 md:mt-16 xl:mt-0">
+  template: `
+  <div class="mt-12 md:mt-16 xl:mt-0">
     <h3 class="text-sm font-medium text-white">
       Send your email to receive updates
     </h3>

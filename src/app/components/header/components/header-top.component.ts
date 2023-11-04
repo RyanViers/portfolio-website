@@ -8,7 +8,6 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
   selector: 'app-header-top',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  styles: [``],
   template: `<div class="relative flex h-16 justify-between">
     <div class="relative z-10 flex px-2 lg:px-0">
       <div class="flex flex-shrink-0 items-center">
@@ -18,14 +17,10 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
         />
       </div>
     </div>
-    <div
-      class="relative z-0 flex flex-1 items-center justify-center px-2 sm:absolute sm:inset-0"
-    >
+    <div class="relative z-0 flex flex-1 items-center justify-center px-2 sm:absolute sm:inset-0">
       <div class="w-full sm:max-w-xs">
         <div class="relative">
-          <div
-            class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
-          >
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <span class="w-6 h-6 text-gray-400" [innerHTML]="getIcon(6)"></span>
           </div>
           <input

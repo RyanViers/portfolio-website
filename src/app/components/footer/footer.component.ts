@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FooterFormComponent } from './components/footer-form.component';
 import { FooterNavComponent } from './components/footer-nav.component';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, FooterNavComponent, FooterFormComponent],
+  imports: [FooterNavComponent, FooterFormComponent],
   styles: [``],
   template: ` <footer class="bg-gray-900">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">

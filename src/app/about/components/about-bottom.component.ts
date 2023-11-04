@@ -1,14 +1,13 @@
 import { TailwindIconsService } from './../../utils/services/icons.service';
 import { RouterModule } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { AboutBottom, aboutBottom } from '../models';
 
 @Component({
   selector: 'app-about-bottom',
   standalone: true,
-  imports: [CommonModule, RouterModule, LazyLoadDirective],
+  imports: [RouterModule, LazyLoadDirective],
   styles: [],
   template: ` <div class="relative isolate -z-10 pb-8 mt-32 sm:mt-40">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -31,13 +30,15 @@ import { AboutBottom, aboutBottom } from '../models';
             role="list"
             class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-white sm:grid-cols-2"
           >
-            <li *ngFor="let b of bottomList" class="flex gap-x-3">
-              <span
-                class="w-6 h-6 text-green-500"
-                [innerHTML]="getIcon(b.icon)"
-              ></span>
-              {{ b.title }}
-            </li>
+            @for (b of bottomList; track b.title) {
+              <li class="flex gap-x-3">
+                <span
+                  class="w-6 h-6 text-green-500"
+                  [innerHTML]="getIcon(b.icon)"
+                ></span>
+                {{ b.title }}
+              </li>
+            }
           </ul>
           <div class="mt-10 flex">
             <a
