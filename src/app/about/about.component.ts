@@ -16,7 +16,9 @@ import { HeaderComponent } from '../components/header/header.component';
     AboutBottomComponent,
   ],
   styles: [],
-  template: `<app-header />
+  template: `
+    <app-header />
+    
     <div class="bg-gray-900">
       <main class="relative isolate">
         <!-- Background -->
