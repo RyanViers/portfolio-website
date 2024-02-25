@@ -4,15 +4,9 @@ import { RouterModule } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterModule],
-  styles: [
-    `
-      :host {
-        display: block;
-        height: 100%;
-        width: 100%;
-      }
-    `,
-  ],
+  host: {
+    class: 'flex w-screen h-screen bg-gray-100 justify-center items-center',
+  },
   template: `
     <div class="block w-full h-full">
       <router-outlet />
