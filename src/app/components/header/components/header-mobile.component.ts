@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { HeaderService } from './../header.service';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Links, headerLinks } from '../models';
 
 @Component({
   selector: 'app-header-mobile',
@@ -10,11 +10,10 @@ import { Links, headerLinks } from '../models';
   <nav class="lg:hidden absolute z-50 w-full bg-gray-800">
     <div class="space-y-1 px-2 pb-3 pt-2">
       
-      @for (link of links; track link.id) {
+      @for (link of headerService.headerLinks; track link.id) {
         <button
           [routerLink]="link.url"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md py-2 px-3 text-base font-medium"
-        >
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md py-2 px-3 text-base font-medium">
           {{ link.name }}
         </button>
       }
@@ -22,8 +21,5 @@ import { Links, headerLinks } from '../models';
   </nav>`,
 })
 export class HeaderMobileComponent {
-  links: Links[] = headerLinks;
-
-  constructor() {}
-
+  public headerService = inject(HeaderService);
 }

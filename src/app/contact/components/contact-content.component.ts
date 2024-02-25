@@ -1,13 +1,11 @@
-import { TailwindIconsService } from './../../utils/services/icons.service';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ContactList, contactList } from '../models';
+import { ContactService } from '../contact.service';
 
 @Component({
   selector: 'app-contact-content',
   standalone: true,
   imports: [RouterModule],
-  styles: [],
   template: `<div class="isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
     <div class="mx-auto max-w-2xl sm:text-center">
       <h2 class="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
@@ -19,10 +17,10 @@ import { ContactList, contactList } from '../models';
       </p>
     </div>
     <div class="mx-auto mt-20 max-w-lg space-y-16">
-      @for (c of contactList; track c.title) {
+      @for (c of contactService.contactList; track c.title) {
         <div class="flex gap-x-6">
           <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500">
-            <span class="text-white w-6 h-6" [innerHTML]="getIcon(c.icon)"></span>
+            <span class="text-white w-6 h-6" [innerHTML]="c.icon"></span>
           </div>
           <div>
             <h3 class="text-base font-semibold leading-7 text-zinc-100 ">
@@ -53,10 +51,5 @@ import { ContactList, contactList } from '../models';
   </div> `,
 })
 export class ContactContentComponent {
-  contactList: ContactList[] = contactList;
-  constructor(private icons: TailwindIconsService) {}
-
-  getIcon(num: number) {
-    return this.icons.getIcon(num);
-  }
+  public contactService = inject(ContactService);
 }

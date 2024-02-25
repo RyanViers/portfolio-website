@@ -1,6 +1,6 @@
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { Component, Input } from '@angular/core';
-import { BackgroundAction } from '../../utils/models';
+import { BackgroundAction } from '../models';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -47,5 +47,4 @@ import { RouterModule } from '@angular/router';
 })
 export class BackgroundActionComponent {
   @Input() options: BackgroundAction | undefined;
-  constructor() {}
 }

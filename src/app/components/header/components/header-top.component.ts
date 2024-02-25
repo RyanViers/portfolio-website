@@ -1,13 +1,11 @@
 import { HeaderService } from './../header.service';
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TailwindIconsService } from 'src/app/utils/services/icons.service';
 
 @Component({
   selector: 'app-header-top',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   template: `<div class="relative flex h-16 justify-between">
     <div class="relative z-10 flex px-2 lg:px-0">
       <div class="flex flex-shrink-0 items-center">
@@ -21,7 +19,7 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
       <div class="w-full sm:max-w-xs">
         <div class="relative">
           <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <span class="w-6 h-6 text-gray-400" [innerHTML]="getIcon(6)"></span>
+            <span class="w-6 h-6 text-gray-400" [innerHTML]="headerService.search"></span>
           </div>
           <input
             id="search"
@@ -34,7 +32,7 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
       </div>
     </div>
     <div
-      (click)="setMenuToggle()"
+      (click)="headerService.setMenuToggle()"
       class="relative z-10 flex items-center lg:hidden"
     >
       <!-- Mobile menu button -->
@@ -44,7 +42,7 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
       >
         <span
           class="w-6 h-6"
-          [innerHTML]="($menuToggle | async) ? getIcon(1) : getIcon(9)"
+          [innerHTML]="(headerService.$menuToggle()) ? headerService.x : headerService.bars"
           ></span
         >
       </button>
@@ -52,17 +50,5 @@ import { TailwindIconsService } from 'src/app/utils/services/icons.service';
   </div>`,
 })
 export class HeaderTopComponent {
-  $menuToggle = this.header.$menuToggle;
-  constructor(
-    private icons: TailwindIconsService,
-    private header: HeaderService
-  ) {}
-
-  getIcon(num: number) {
-    return this.icons.getIcon(num);
-  }
-
-  setMenuToggle() {
-    this.header.setMenuToggle();
-  }
+  public headerService = inject(HeaderService);
 }

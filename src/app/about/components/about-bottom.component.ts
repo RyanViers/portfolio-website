@@ -1,14 +1,12 @@
-import { TailwindIconsService } from './../../utils/services/icons.service';
 import { RouterModule } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
-import { AboutBottom, aboutBottom } from '../models';
+import { AboutService } from '../about.service';
 
 @Component({
   selector: 'app-about-bottom',
   standalone: true,
   imports: [RouterModule, LazyLoadDirective],
-  styles: [],
   template: ` <div class="relative isolate -z-10 pb-8 mt-32 sm:mt-40">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div
@@ -16,7 +14,7 @@ import { AboutBottom, aboutBottom } from '../models';
       >
         <img
           class="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
-          [appLazyLoad]="pic"
+          [appLazyLoad]="aboutService.bottomPic"
         />
         <div class="w-full flex-auto">
           <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -30,11 +28,11 @@ import { AboutBottom, aboutBottom } from '../models';
             role="list"
             class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-white sm:grid-cols-2"
           >
-            @for (b of bottomList; track b.title) {
+            @for (b of aboutService.aboutBottom; track b.title) {
               <li class="flex gap-x-3">
                 <span
                   class="w-6 h-6 text-green-500"
-                  [innerHTML]="getIcon(b.icon)"
+                  [innerHTML]="b.icon"
                 ></span>
                 {{ b.title }}
               </li>
@@ -60,16 +58,6 @@ import { AboutBottom, aboutBottom } from '../models';
     </div>
   </div>`,
 })
-export class AboutBottomComponent implements OnInit {
-  bottomList: AboutBottom[] = aboutBottom;
-  pic: string =
-    'https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80';
-
-  constructor(private icons: TailwindIconsService) {}
-
-  ngOnInit(): void {}
-
-  getIcon(num: number) {
-    return this.icons.getIcon(num);
-  }
+export class AboutBottomComponent {
+  public aboutService = inject(AboutService);
 }

@@ -1,21 +1,20 @@
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
-import { TailwindIconsService } from '../utils/services/icons.service';
 import { FooterComponent } from '../components/footer/footer.component';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../components/header/header.component';
-import { Projects, projects } from '../utils/models';
+import { ProjectsService } from './projects.service';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
+  providers: [ProjectsService],
   imports: [HeaderComponent, FooterComponent, LazyLoadDirective],
-  styles: [],
   template: `<app-header />
     <ul
       role="list"
       class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-gray-800 p-4"
     >
-      @for (p of projects; track p.title) {
+      @for (p of projectsService.projects; track p.title) {
         <li
           class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-[#fefefe] text-center shadow"
         >
@@ -43,7 +42,7 @@ import { Projects, projects } from '../utils/models';
                   href="{{ p.github }}"
                   class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
-                  <img class="w-5 h-5" [appLazyLoad]="github" />
+                  <img class="w-5 h-5" [appLazyLoad]="projectsService.github" />
                   GitHub
                 </a>
               </div>
@@ -52,7 +51,7 @@ import { Projects, projects } from '../utils/models';
                   href="{{ p.demo }}"
                   class="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
-                  <span class="w-5 h-5" [innerHTML]="getIcon(7)"></span>
+                  <span class="w-5 h-5" [innerHTML]="projectsService.arrowRight"></span>
                   Check it out
                 </a>
               </div>
@@ -64,12 +63,5 @@ import { Projects, projects } from '../utils/models';
     <app-footer /> `,
 })
 export default class ProjectsComponent {
-  projects: Projects[] = projects;
-  github: string = 'assets/social-icons/icons8-github.svg';
-
-  constructor(private icons: TailwindIconsService) {}
-
-  getIcon(num: number) {
-    return this.icons.getIcon(num);
-  }
+  public projectsService = inject(ProjectsService);
 }

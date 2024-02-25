@@ -1,3 +1,4 @@
+import { AboutService } from './about.service';
 import { AboutBottomComponent } from './components/about-bottom.component';
 import { AboutContentComponent } from './components/about-content.component';
 import { AboutHeaderComponent } from './components/about-header.component';
@@ -8,6 +9,7 @@ import { HeaderComponent } from '../components/header/header.component';
 @Component({
   selector: 'app-about',
   standalone: true,
+  providers: [AboutService],
   imports: [
     HeaderComponent,
     FooterComponent,
@@ -15,7 +17,6 @@ import { HeaderComponent } from '../components/header/header.component';
     AboutContentComponent,
     AboutBottomComponent,
   ],
-  styles: [],
   template: `
     <app-header />
     

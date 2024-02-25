@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   selector: 'app-contact-logo',
   standalone: true,
   imports: [LazyLoadDirective],
-  styles: [],
   template: `
   <div class="flex justify-center items-center w-full h-full bg-gray-900 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -33,6 +32,4 @@ export class ContactLogoComponent {
     'assets/technology/js-ts.jpeg',
     'assets/technology/aws-bw.png',
   ];
-
-  constructor() {}
 }

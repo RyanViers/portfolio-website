@@ -1,14 +1,13 @@
 import { LazyLoadDirective } from './../../utils/directives/lazy-load.directive';
 import { RouterModule } from '@angular/router';
-import { Component } from '@angular/core';
-import { InfoCard, infoCards } from 'src/app/utils/models';
+import { Component, inject } from '@angular/core';
 import { fader, opacityScale } from 'src/app/utils/animations';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-home-info-cards',
   standalone: true,
   imports: [RouterModule, LazyLoadDirective],
-  styles: [],
   animations: [opacityScale, fader],
   template: `<section
     class="max-w-xl px-4 pt-24 mx-auto sm:px-6 sm:pt-32 lg:max-w-7xl lg:px-8"
@@ -26,7 +25,7 @@ import { fader, opacityScale } from 'src/app/utils/animations';
     <div
       class="mt-10 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0"
     >
-      @for (card of infoCards; track card.technology) {
+      @for (card of homeService.infoCards; track card.technology) {
         <a
           routerLink="/projects"
           class="block group"
@@ -55,6 +54,5 @@ import { fader, opacityScale } from 'src/app/utils/animations';
   </section>`,
 })
 export class HomeInfoCardsComponent {
-  infoCards: InfoCard[] = infoCards;
-  constructor() {}
+  public homeService = inject(HomeService);
 }

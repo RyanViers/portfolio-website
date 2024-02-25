@@ -3,10 +3,12 @@ import { ContactContentComponent } from './components/contact-content.component'
 import { FooterComponent } from './../components/footer/footer.component';
 import { HeaderComponent } from './../components/header/header.component';
 import { Component } from '@angular/core';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
+  providers: [ContactService],
   imports: [
     HeaderComponent,
     FooterComponent,

@@ -6,7 +6,6 @@ import { Links } from '../models/models';
   selector: 'app-footer-nav',
   standalone: true,
   imports: [RouterModule],
-  styles: [``],
   template: `
   <div class="grid grid-cols-2 gap-8 xl:col-span-2">
     <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
