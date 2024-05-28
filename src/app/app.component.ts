@@ -15,6 +15,6 @@ import { RouterOutlet } from '@angular/router';
     </div> 
   `,
 })
-export class AppComponent {
+export default class AppComponent {
   title = 'portfolio-website';
 }

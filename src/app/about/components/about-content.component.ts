@@ -9,13 +9,12 @@ import { AboutService } from '../about.service';
   template: `<!-- Image section -->
     <div class="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
       <img
-        [appLazyLoad]="aboutPicture"
+        [appLazyLoad]="aboutService.contentPicture"
         loading="lazy"
         class="aspect-[9/4] w-full object-cover xl:rounded-3xl"
       />
     </div>
 
-    <!-- Values section -->
     <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">

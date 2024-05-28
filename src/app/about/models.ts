@@ -10,4 +10,3 @@ export interface AboutBottom {
   icon: SafeHtml;
   title: string;
 }
-

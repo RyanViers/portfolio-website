@@ -5,7 +5,6 @@ import { HeaderComponent } from './../components/header/header.component';
 import { Component } from '@angular/core';
 import { ContactService } from './contact.service';
 
-
 @Component({
   selector: 'app-contact',
   standalone: true,

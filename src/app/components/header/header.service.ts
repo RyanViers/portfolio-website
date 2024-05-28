@@ -1,9 +1,7 @@
 import { Injectable, WritableSignal, signal } from '@angular/core';
 import { NavButton } from './models';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class HeaderService {
   $menuToggle: WritableSignal<boolean> = signal(false);
 

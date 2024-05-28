@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HeaderService } from './header.service';
 import { HeaderTopComponent } from './components/header-top.component';
 import { HeaderNavbarComponent } from './components/header-navbar.component';

@@ -1,3 +1,4 @@
+import { AboutService } from './about.service';
 import { AboutBottomComponent } from './components/about-bottom.component';
 import { AboutContentComponent } from './components/about-content.component';
 import { AboutHeaderComponent } from './components/about-header.component';

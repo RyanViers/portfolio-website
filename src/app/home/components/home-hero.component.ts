@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { fader, opacityScaleDelayLong } from 'src/app/utils/animations';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-home-hero',
@@ -70,7 +71,7 @@ import { fader, opacityScaleDelayLong } from 'src/app/utils/animations';
         <img
           @opacityScaleDelayLong
           class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-          [appLazyLoad]="heroPicture"
+          [appLazyLoad]="homeService.heroPicture"
         />
       </div>
     </div>
