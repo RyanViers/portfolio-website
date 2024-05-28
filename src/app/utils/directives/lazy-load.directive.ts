@@ -1,20 +1,21 @@
-import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Input, inject, input } from '@angular/core';
 
 @Directive({
   selector: '[appLazyLoad]',
   standalone: true,
 })
 export class LazyLoadDirective implements AfterViewInit {
-  @Input('appLazyLoad') src: string | undefined;
 
-  constructor(private el: ElementRef) {}
+  el = inject(ElementRef);
+
+  appLazyLoad = input<string>();
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const img = this.el.nativeElement;
-          const src = this.src;
+          const src = this.appLazyLoad();
           if (src) {
             img.src = src;
           }

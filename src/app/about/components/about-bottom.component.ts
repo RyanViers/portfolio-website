@@ -1,16 +1,12 @@
-import { TailwindIconsService } from './../../utils/services/icons.service';
-import { RouterModule } from '@angular/router';
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
-import { AboutBottom, aboutBottom } from '../models';
+import { AboutService } from '../about.service';
 
 @Component({
   selector: 'app-about-bottom',
   standalone: true,
-  imports: [CommonModule, RouterModule, LazyLoadDirective],
-  styles: [],
-  template: `<!-- CTA section -->
+  imports: [LazyLoadDirective],
+  template: `
     <div class="relative isolate -z-10 pb-8 mt-32 sm:mt-40">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div
@@ -34,13 +30,15 @@ import { AboutBottom, aboutBottom } from '../models';
               role="list"
               class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-white sm:grid-cols-2"
             >
-              <li *ngFor="let b of bottomList" class="flex gap-x-3">
-                <span
-                  class="w-6 h-6 text-green-500"
-                  [innerHTML]="getIcon(b.icon)"
-                ></span>
-                {{ b.title }}
-              </li>
+              @for( b of service.aboutBottom; track b) {
+                <li class="flex gap-x-3">
+                  <span
+                    class="w-6 h-6 text-green-500"
+                    [innerHTML]="b.icon"
+                  ></span>
+                  {{ b.title }}
+                </li>
+              }
             </ul>
             <div class="mt-10 flex">
               <a
@@ -63,13 +61,9 @@ import { AboutBottom, aboutBottom } from '../models';
     </div>`,
 })
 export class AboutBottomComponent {
-  bottomList: AboutBottom[] = aboutBottom;
+  
+  public service = inject(AboutService);
   pic: string =
     'https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80';
 
-  constructor(private icons: TailwindIconsService) {}
-
-  getIcon(num: number) {
-    return this.icons.getIcon(num);
-  }
 }

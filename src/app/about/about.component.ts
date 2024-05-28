@@ -3,22 +3,23 @@ import { AboutContentComponent } from './components/about-content.component';
 import { AboutHeaderComponent } from './components/about-header.component';
 import { FooterComponent } from './../components/footer/footer.component';
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../components/header/header.component';
+import { AboutService } from './about.service';
 
 @Component({
   selector: 'app-about',
   standalone: true,
+  providers: [AboutService],
   imports: [
-    CommonModule,
     HeaderComponent,
     FooterComponent,
     AboutHeaderComponent,
     AboutContentComponent,
     AboutBottomComponent,
   ],
-  styles: [],
-  template: `<app-header />
+  template: `
+    <app-header />
+    
     <div class="bg-gray-900">
       <main class="relative isolate">
         <!-- Background -->

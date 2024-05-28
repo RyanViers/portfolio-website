@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, WritableSignal, signal } from '@angular/core';
+import { NavButton } from './models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeaderService {
-  $menuToggle: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  $menuToggle: WritableSignal<boolean> = signal(false);
 
-  setMenuToggle() {
-    this.$menuToggle.next(!this.$menuToggle.value);
-  }
-
-  constructor() {}
+  navButtons: NavButton[] = [
+    { label: 'Home', route: '/home' },
+    { label: 'About', route: '/about' },
+    { label: 'Projects', route: '/projects' },
+    { label: 'Contact', route: '/contact' },
+  ];
 }
