@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { fader, opacityScaleDelayLong } from 'src/app/utils/animations';
@@ -71,13 +71,13 @@ import { HomeService } from '../home.service';
         <img
           @opacityScaleDelayLong
           class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-          [appLazyLoad]="homeService.heroPicture"
+          [appLazyLoad]="service.heroPicture"
         />
       </div>
     </div>
   </div>`,
 })
 export class HomeHeroComponent {
-  heroPicture: string =
-    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80';
+  public service = inject(HomeService);
+ 
 }

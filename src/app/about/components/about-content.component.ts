@@ -9,7 +9,7 @@ import { AboutService } from '../about.service';
   template: `<!-- Image section -->
     <div class="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
       <img
-        [appLazyLoad]="aboutService.contentPicture"
+        [appLazyLoad]="service.aboutPicture"
         loading="lazy"
         class="aspect-[9/4] w-full object-cover xl:rounded-3xl"
       />
@@ -45,6 +45,5 @@ import { AboutService } from '../about.service';
 export class AboutContentComponent {
 
   public service = inject(AboutService);
-  aboutPicture: string =
-    'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2894&q=80';
+  
 }
