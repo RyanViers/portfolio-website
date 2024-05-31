@@ -2,12 +2,10 @@ import { TailwindIcon, TailwindIconType } from './../../../utils/tailwind-icons'
 import { HeaderService } from './../header.service';
 import { Component, inject } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header-top',
   standalone: true,
-  imports: [RouterModule],
   template: `<div class="relative flex h-16 justify-between">
       <div class="relative z-10 flex px-2 lg:px-0">
         <div class="flex flex-shrink-0 items-center">

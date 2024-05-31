@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
 import { AboutService } from '../about.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about-bottom',
   standalone: true,
-  imports: [LazyLoadDirective],
+  imports: [LazyLoadDirective, RouterLink],
   template: `
-    <div class="relative isolate -z-10 pb-8 mt-32 sm:mt-40">
+    <div class=" pb-8 mt-32 sm:mt-40">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div
           class="mx-auto flex max-w-2xl flex-col gap-16 bg-white/5 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20"
@@ -43,7 +44,7 @@ import { AboutService } from '../about.service';
             <div class="mt-10 flex">
               <a
                 routerLink="/contact"
-                class="text-sm font-semibold leading-6 text-indigo-400"
+                class="text-sm font-semibold leading-6 text-indigo-400 hover:cursor-pointer hover:text-indigo-300"
                 >Contact Me <span>&rarr;</span></a
               >
             </div>

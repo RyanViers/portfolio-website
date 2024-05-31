@@ -10,7 +10,6 @@ import { AboutService } from '../about.service';
     <div class="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
       <img
         [appLazyLoad]="service.aboutPicture"
-        loading="lazy"
         class="aspect-[9/4] w-full object-cover xl:rounded-3xl"
       />
     </div>
@@ -31,12 +30,12 @@ import { AboutService } from '../about.service';
           <div class="relative pl-9">
             <dt class="inline font-semibold text-white">
               <span
-                class="absolute left-1 top-1 h-5 w-5 text-indigo-500"
+                class="relative left-1 top-1 h-5 w-5 text-indigo-500"
                 [innerHTML]="a.icon"
               ></span>
               {{ a.title }}
             </dt>
-            <dd class="inline">{{ a.description }}&#125;</dd>
+            <dd class="inline">{{ a.description }}</dd>
           </div>
         }
       </dl>

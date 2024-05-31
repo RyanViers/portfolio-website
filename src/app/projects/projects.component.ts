@@ -6,7 +6,6 @@ import { HeaderComponent } from '../components/header/header.component';
 import { ProjectsService } from './projects.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
-
 @Component({
   selector: 'app-projects',
   standalone: true,
