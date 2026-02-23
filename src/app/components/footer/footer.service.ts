@@ -1,12 +1,11 @@
-import { Injectable } from "@angular/core";
-import { NavButton } from "./models";
+import { Injectable } from '@angular/core';
+import { FooterLink } from './models';
 
 @Injectable()
 export class FooterService {
-  navButtons: NavButton[] = [
-    { label: 'Home', route: '/home' },
-    { label: 'About', route: '/about' },
-    { label: 'Projects', route: '/projects' },
-    { label: 'Contact', route: '/contact' },
+  links: FooterLink[] = [
+    { label: 'Home', route: '/' },
+    { label: 'Apps', route: '/apps' },
+    { label: 'GitHub', href: 'https://github.com/RyanViers', external: true },
   ];
 }

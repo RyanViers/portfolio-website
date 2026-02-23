@@ -1,4 +1,6 @@
-export interface NavButton {
+export interface NavItem {
   label: string;
-  route: string;
+  route?: string;
+  href?: string;
+  external?: boolean;
 }

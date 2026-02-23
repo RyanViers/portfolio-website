@@ -7,18 +7,29 @@ import { FooterService } from '../footer.service';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <div class="grid grid-cols-2 gap-8 xl:col-span-2">
-      <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
-          
-        @for(button of service.navButtons; track button){
-          <a [routerLink]="button.route" class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium">
-            {{ button.label }}
+    <div class="flex items-center gap-6">
+      @for (link of service.links; track link.label) {
+        @if (link.external) {
+          <a
+            [href]="link.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-mono text-gray-500 hover:text-cyan-400 transition-colors"
+          >
+            {{ link.label }}
+          </a>
+        } @else {
+          <a
+            [routerLink]="link.route"
+            class="text-sm font-mono text-gray-500 hover:text-cyan-400 transition-colors"
+          >
+            {{ link.label }}
           </a>
         }
-      </div>
+      }
     </div>
   `,
 })
 export class FooterNavComponent {
-  public service = inject(FooterService);
+  service = inject(FooterService);
 }

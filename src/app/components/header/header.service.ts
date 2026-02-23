@@ -1,14 +1,13 @@
-import { Injectable, WritableSignal, signal } from '@angular/core';
-import { NavButton } from './models';
+import { Injectable, signal } from '@angular/core';
+import { NavItem } from './models';
 
 @Injectable()
 export class HeaderService {
-  $menuToggle: WritableSignal<boolean> = signal(false);
+  $menuToggle = signal(false);
 
-  navButtons: NavButton[] = [
-    { label: 'Home', route: '/home' },
-    { label: 'About', route: '/about' },
-    { label: 'Projects', route: '/projects' },
-    { label: 'Contact', route: '/contact' },
+  navItems: NavItem[] = [
+    { label: 'Home', route: '/' },
+    { label: 'Apps', route: '/apps' },
+    { label: 'GitHub', href: 'https://github.com/RyanViers', external: true },
   ];
 }

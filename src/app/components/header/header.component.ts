@@ -1,30 +1,27 @@
+import { Component, inject } from '@angular/core';
 import { HeaderService } from './header.service';
 import { HeaderTopComponent } from './components/header-top.component';
 import { HeaderNavbarComponent } from './components/header-navbar.component';
-import { Component, inject } from '@angular/core';
 import { HeaderMobileComponent } from './components/header-mobile.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   providers: [HeaderService],
-  imports: [
-    HeaderMobileComponent,
-    HeaderNavbarComponent,
-    HeaderTopComponent,
-  ],
+  imports: [HeaderTopComponent, HeaderNavbarComponent, HeaderMobileComponent],
   template: `
-    <header class="bg-gray-800">
-      <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8">
-        <app-header-top />
+    <header class="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <app-header-top class="flex-1" />
         <app-header-navbar />
       </div>
 
-      @if(service.$menuToggle()) {
+      @if (service.$menuToggle()) {
         <app-header-mobile />
       }
-    </header>`,
+    </header>
+  `,
 })
 export class HeaderComponent {
-  public service = inject(HeaderService);
+  service = inject(HeaderService);
 }

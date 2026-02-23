@@ -1,23 +1,11 @@
-export interface BackgroundAction {
+export interface App {
+  id: string;
   title: string;
   description: string;
   image: string;
-  link?: string;
-}
-
-export interface Projects {
-  image: string;
-  title: string;
-  description: string;
-  technologies: string;
+  technologies: string[];
   github?: string;
   demo?: string;
+  featured?: boolean;
+  hosted?: boolean;
 }
-
-export interface InfoCard {
-  technology: string;
-  title: string;
-  description: string;
-  image: string;
-}
-

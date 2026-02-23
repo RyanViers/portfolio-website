@@ -1,83 +1,110 @@
-import { Component, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { LazyLoadDirective } from 'src/app/utils/directives/lazy-load.directive';
-import { fader, opacityScaleDelayLong } from 'src/app/utils/animations';
-import { HomeService } from '../home.service';
+import { Component, signal, afterNextRender, OnDestroy } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { ParticleBackgroundComponent } from './particle-background.component';
 
 @Component({
   selector: 'app-home-hero',
   standalone: true,
-  imports: [RouterModule, LazyLoadDirective],
-  animations: [fader, opacityScaleDelayLong],
-  template: ` 
-  <div class="bg-white relative px-4 pt-24 mx-auto max-w-7xl sm:px-6  lg:px-8">
-    <div class="relative">
-      <div class="mx-auto max-w-7xl">
-        <div class="relative z-10  lg:w-full lg:max-w-2xl">
-          <svg
-            class="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-white lg:block"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <polygon points="0,0 90,0 50,100 0,100" />
-          </svg>
+  imports: [RouterLink, ParticleBackgroundComponent],
+  template: `
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+      <app-particle-background class="absolute inset-0 z-0" />
 
-          <div class="relative px-6 py-10  lg:px-8  lg:pr-0">
-            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-              <div class="hidden sm:mb-10 sm:flex">
-                <div
-                  class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-                >
-                  Reach Out and Say Hello
-                  <a
-                    routerLink="/contact"
-                    class="whitespace-nowrap font-semibold text-indigo-600"
-                    ><span class="absolute inset-0" aria-hidden="true"></span
-                    >Contact Me <span aria-hidden="true">&rarr;</span></a
-                  >
-                </div>
-              </div>
-              <h1
-                class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
-              >
-                Ryan Viers - Full Stack Web Developer
-              </h1>
-              <p class="mt-6 text-sm sm:text-lg leading-8 text-gray-600">
-                I'm a Full Stack Developer, skilled in using a multitude of
-                technologies including Angular, Ionic, and React. I focus on
-                building efficient, scalable web applications backed by robust
-                cloud services like AWS and Firebase. My aim is to create
-                solutions that truly meet user needs and business goals. Explore
-                my portfolio to see how I turn concepts into reality.
-              </p>
-              <div class="mt-10 flex items-center gap-x-6">
-                <a
-                  href="https://github.com/RyanViers"
-                  class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >GitHub Profile</a
-                >
-                <a
-                  routerLink="/projects"
-                  class="text-sm font-semibold leading-6 text-gray-900"
-                  >Explore Projects <span aria-hidden="true">→</span></a
-                >
-              </div>
-            </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-950/50 via-transparent to-gray-950 z-[1]"></div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
+        <div class="max-w-3xl">
+          <!-- Terminal prompt -->
+          <div class="font-mono text-sm sm:text-base mb-6">
+            <span class="text-gray-500">&gt; </span>
+            <span class="text-emerald-400">{{ typedText() }}</span>
+            <span class="inline-block w-2 h-5 ml-0.5 border-r-2 border-emerald-400 typing-cursor align-middle"></span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-100 mb-6">
+            Ryan Viers
+          </h1>
+
+          <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mb-4">
+            Full Stack Developer
+          </p>
+
+          <p class="text-base text-gray-500 max-w-2xl mb-10 leading-relaxed">
+            Building apps with Angular, React, and AWS. This site is a living platform
+            to host, demo, and let you interact with things I've built.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              routerLink="/apps"
+              class="inline-flex items-center gap-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30 px-6 py-3 text-sm font-mono text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-400/50 transition-all"
+            >
+              View Apps
+              <span class="text-xs">&rarr;</span>
+            </a>
+            <a
+              href="https://github.com/RyanViers"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-6 py-3 text-sm font-mono text-gray-400 hover:text-gray-200 hover:border-gray-500 transition-all"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </div>
-      <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          @opacityScaleDelayLong
-          class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-          [appLazyLoad]="service.heroPicture"
-        />
-      </div>
-    </div>
-  </div>`,
+    </section>
+  `,
 })
-export class HomeHeroComponent {
-  public service = inject(HomeService);
- 
+export class HomeHeroComponent implements OnDestroy {
+  typedText = signal('');
+  private timeouts: ReturnType<typeof setTimeout>[] = [];
+
+  private readonly phrases = [
+    'ryan.viers --init',
+    'loading modules...',
+    'ready.',
+  ];
+
+  constructor() {
+    afterNextRender(() => this.startTyping());
+  }
+
+  private startTyping() {
+    let delay = 500;
+    let currentPhrase = 0;
+    let currentChar = 0;
+
+    const typeNext = () => {
+      if (currentPhrase >= this.phrases.length) return;
+
+      const phrase = this.phrases[currentPhrase];
+
+      if (currentChar <= phrase.length) {
+        this.typedText.set(phrase.slice(0, currentChar));
+        currentChar++;
+        const id = setTimeout(typeNext, 40 + Math.random() * 30);
+        this.timeouts.push(id);
+      } else {
+        // Pause then move to next phrase
+        currentPhrase++;
+        currentChar = 0;
+        if (currentPhrase < this.phrases.length) {
+          const id = setTimeout(() => {
+            this.typedText.set('');
+            const id2 = setTimeout(typeNext, 200);
+            this.timeouts.push(id2);
+          }, 1000);
+          this.timeouts.push(id);
+        }
+      }
+    };
+
+    const id = setTimeout(typeNext, delay);
+    this.timeouts.push(id);
+  }
+
+  ngOnDestroy() {
+    this.timeouts.forEach(clearTimeout);
+  }
 }

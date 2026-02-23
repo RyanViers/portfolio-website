@@ -1,4 +1,6 @@
-export interface NavButton {
+export interface FooterLink {
   label: string;
-  route: string;
+  route?: string;
+  href?: string;
+  external?: boolean;
 }

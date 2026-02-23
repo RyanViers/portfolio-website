@@ -1,23 +1,37 @@
 import { Component, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HeaderService } from '../header.service';
 
 @Component({
   selector: 'app-header-navbar',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterLink, RouterLinkActive],
   template: `
-  <nav class="hidden lg:flex lg:space-x-8 lg:py-2">
-    @for(button of service.navButtons; track button) {
-      <button
-        [routerLink]="button.route"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium"
-      >
-        {{ button.label }}
-      </button>
-    }
-  </nav>`,
+    <nav class="hidden lg:flex lg:items-center lg:gap-1">
+      @for (item of service.navItems; track item.label) {
+        @if (item.external) {
+          <a
+            [href]="item.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-cyan-400 px-3 py-2 text-sm font-mono transition-colors"
+          >
+            {{ item.label }}
+          </a>
+        } @else {
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="text-cyan-400"
+            [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+            class="text-gray-400 hover:text-cyan-400 px-3 py-2 text-sm font-mono transition-colors"
+          >
+            {{ item.label }}
+          </a>
+        }
+      }
+    </nav>
+  `,
 })
 export class HeaderNavbarComponent {
-  public service = inject(HeaderService);
+  service = inject(HeaderService);
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FooterFormComponent } from './components/footer-form.component';
 import { FooterNavComponent } from './components/footer-nav.component';
 import { FooterService } from './footer.service';
 
@@ -7,21 +6,20 @@ import { FooterService } from './footer.service';
   selector: 'app-footer',
   standalone: true,
   providers: [FooterService],
-  imports: [FooterNavComponent, FooterFormComponent],
-  template: ` 
-    <footer class="bg-gray-900">
-      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
-          <app-footer-nav />
-          <app-footer-form />
-        </div>
-
-        <div class="py-10 border-t border-gray-800">
-          <p class="text-sm text-gray-400">
-            Copyright &copy; 2021 Ryan Viers, Inc.
+  imports: [FooterNavComponent],
+  template: `
+    <footer class="border-t border-gray-800/50 bg-gray-950">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-gray-600 font-mono">
+            &copy; {{ year }} Ryan Viers
           </p>
+          <app-footer-nav />
         </div>
       </div>
-    </footer>`,
+    </footer>
+  `,
 })
-export class FooterComponent {}
+export class FooterComponent {
+  year = new Date().getFullYear();
+}

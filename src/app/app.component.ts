@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
@@ -7,14 +6,12 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   host: {
-    class: 'block w-full h-full',
+    class: 'block w-full min-h-screen',
   },
   template: `
-    <div class="block w-full h-full">
+    <div class="block w-full min-h-screen bg-gray-950">
       <router-outlet />
-    </div> 
+    </div>
   `,
 })
-export default class AppComponent {
-  title = 'portfolio-website';
-}
+export default class AppComponent {}
