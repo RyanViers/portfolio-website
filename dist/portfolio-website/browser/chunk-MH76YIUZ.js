@@ -1,1 +1,0 @@
-import{U as p,k as o,u as n}from"./chunk-FAGP3F2R.js";var u=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=o({type:e,selectors:[["app-apps-layout"]],decls:1,vars:0,template:function(t,i){t&1&&n(0,"router-outlet")},dependencies:[p],encapsulation:2})}}return e})();export{u as default};

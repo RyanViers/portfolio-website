@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PokedexStore } from './pokedex.service';
 import { PokemonCard } from './components/pokemon-card.component';
@@ -37,7 +37,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
           </div>
 
           <!-- Loading -->
-          @if (store.$loading()) {
+          @if (store.pokemonList.isLoading()) {
             <div class="flex justify-center py-20">
               <div class="h-8 w-8 animate-spin rounded-full border-2 border-gray-700 border-t-cyan-400"></div>
             </div>
@@ -84,7 +84,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
       <app-footer />
 
       <!-- Detail Modal -->
-      @if (store.$selectedDetail(); as detail) {
+      @if (store.pokemonDetail.value(); as detail) {
         <div
           class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
           (click)="store.closeDetail()"
@@ -155,12 +155,8 @@ import { FooterComponent } from '../../components/footer/footer.component';
     </div>
   `,
 })
-export default class Pokedex implements OnInit {
+export default class Pokedex {
   store = inject(PokedexStore);
-
-  ngOnInit() {
-    this.store.loadPokemon();
-  }
 
   onSearch(event: Event) {
     const value = (event.target as HTMLInputElement).value;

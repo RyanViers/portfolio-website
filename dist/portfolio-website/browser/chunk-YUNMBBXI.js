@@ -1,0 +1,1 @@
+import{T as p,j as o,t as n}from"./chunk-HZ74SPNB.js";var u=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=o({type:e,selectors:[["app-apps-layout"]],decls:1,vars:0,template:function(t,i){t&1&&n(0,"router-outlet")},dependencies:[p],encapsulation:2})}}return e})();export{u as default};
